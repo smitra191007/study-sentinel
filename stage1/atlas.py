@@ -1,20 +1,21 @@
 """
-Owned by: Person A (integrator).
+ATLAS — Study Knowledge Graph / Patient 360 query layer.
 
-Wires loader + cleaning + graph + checks + documents +
-site-query / monitor-escalation handling + Answer Agent.
+Owned by: Person A
 
-Run:
-    python -m stage1.atlas --data hackathon-data
-
-For a natural-language question:
-    from stage1.atlas import answer
-    result = answer("hackathon-data", "How many subjects are in the study?")
+Responsibilities:
+- Load the study data through loader.py
+- Apply cut and correction logic
+- Build the study graph
+- Run deterministic safety/protocol checks
+- Detect embedded prompt-injection instructions in documents
+- Handle site queries / monitor escalations
+- Answer COUNT / LOOKUP / FINDING / TRAP questions
 """
 
 import argparse
 import json
-from pathlib import Path
+import os
 
 from .loader import (
     load_data,
@@ -25,12 +26,13 @@ from .loader import (
     apply_corrections,
 )
 
-from .graph import build, write_stats
+from .graph import build
 
 from .documents import (
     active_protocol_version,
     prohibited_meds,
     scan_for_embedded_instructions,
+    load_protocol_text,
 )
 
 from . import checks
@@ -39,181 +41,226 @@ from .answer_agent import answer_question
 
 
 def load_json_file(path):
-    """Load a JSON file and return its contents."""
-    with open(path, encoding="utf-8") as f:
+    """
+    Load a JSON file if it exists.
+
+    Returns:
+        Parsed JSON object, or None if the file does not exist.
+    """
+    if not os.path.exists(path):
+        return None
+
+    with open(
+        path,
+        encoding="utf-8",
+    ) as f:
         return json.load(f)
 
 
-def query_site(data_dir, domain, usubjid, seq):
+def query_site(
+    data_dir,
+    finding,
+):
     """
-    Look up a site response using:
+    Look for a site response corresponding to a finding.
 
-        DOMAIN|USUBJID|SEQ
-
-    If no matching response exists, use the _default response.
+    The response files are optional. Missing files simply produce
+    no site response.
     """
-    path = Path(data_dir) / "responses" / "site_replies.json"
-    replies = load_json_file(path)
 
-    key = f"{domain}|{usubjid}|{seq}"
-
-    response = replies.get(
-        key,
-        replies.get("_default"),
+    path = os.path.join(
+        data_dir,
+        "responses",
+        "site_replies.json",
     )
 
-    if response is None:
+    replies = load_json_file(path)
+
+    if not replies:
         return None
 
-    return {
-        "status": response[0],
-        "response": response[1],
-    }
+    usubjid = finding.get("usubjid")
+
+    finding_code = finding.get(
+        "finding"
+    )
+
+    if isinstance(replies, list):
+        for reply in replies:
+            if not isinstance(reply, dict):
+                continue
+
+            if (
+                reply.get("usubjid") == usubjid
+                and (
+                    reply.get("finding") == finding_code
+                    or reply.get("finding_code") == finding_code
+                )
+            ):
+                return reply
+
+    elif isinstance(replies, dict):
+        key = (
+            f"{usubjid}:{finding_code}"
+        )
+
+        if key in replies:
+            return replies[key]
+
+    return None
 
 
-def escalate_finding(data_dir, code, usubjid):
+def escalate_finding(
+    data_dir,
+    finding,
+):
     """
-    Look up the monitor decision using:
+    Look for a monitor decision corresponding to a finding.
 
-        CODE|USUBJID
-
-    Handles APPROVED, REJECTED and CLARIFY responses.
+    The monitor decision file is optional.
     """
-    path = (
-        Path(data_dir)
-        / "responses"
-        / "monitor_decisions.json"
+
+    path = os.path.join(
+        data_dir,
+        "responses",
+        "monitor_decisions.json",
     )
 
     decisions = load_json_file(path)
 
-    key = f"{code}|{usubjid}"
-
-    response = decisions.get(key)
-
-    if response is None:
+    if not decisions:
         return None
 
-    return {
-        "status": response[0],
-        "response": response[1],
-    }
+    usubjid = finding.get("usubjid")
+
+    finding_code = finding.get(
+        "finding"
+    )
+
+    if isinstance(decisions, list):
+        for decision in decisions:
+            if not isinstance(decision, dict):
+                continue
+
+            if (
+                decision.get("usubjid") == usubjid
+                and (
+                    decision.get("finding") == finding_code
+                    or decision.get("finding_code") == finding_code
+                )
+            ):
+                return decision
+
+    elif isinstance(decisions, dict):
+        key = (
+            f"{usubjid}:{finding_code}"
+        )
+
+        if key in decisions:
+            return decisions[key]
+
+    return None
 
 
-def handle_findings(data_dir, findings):
+def handle_findings(
+    data_dir,
+    findings,
+):
     """
     Add site-query and monitor-escalation results to findings.
 
     Findings with evidence triples are eligible for a site query.
     Monitor escalation uses the finding code and subject ID.
     """
+
     query_results = []
     escalation_results = []
 
     for category, category_findings in findings.items():
 
-        if not isinstance(category_findings, list):
+        if not isinstance(
+            category_findings,
+            list,
+        ):
             continue
 
         for finding in category_findings:
 
-            if not isinstance(finding, dict):
+            if not isinstance(
+                finding,
+                dict,
+            ):
                 continue
 
-            evidence = finding.get("evidence", [])
+            evidence = finding.get(
+                "evidence",
+                [],
+            )
 
-            # ---------------------------------------------------------
-            # Site queries
-            # ---------------------------------------------------------
-
-            for item in evidence:
-
-                if len(item) != 3:
-                    continue
-
-                domain, usubjid, seq = item
-
-                response = query_site(
+            # Findings with evidence can be sent to the site.
+            if evidence:
+                site_response = query_site(
                     data_dir,
-                    domain,
-                    usubjid,
-                    seq,
+                    finding,
                 )
 
-                if response is not None:
-
+                if site_response is not None:
                     query_results.append(
                         {
-                            "finding": finding.get(
-                                "finding",
-                                category,
-                            ),
-                            "usubjid": usubjid,
-                            "evidence": [
-                                domain,
-                                usubjid,
-                                seq,
-                            ],
-                            "site_response": response,
+                            "category": category,
+                            "finding": finding,
+                            "response": site_response,
                         }
                     )
 
-            # ---------------------------------------------------------
-            # Monitor escalation
-            # ---------------------------------------------------------
+            # Findings can also be escalated to the monitor.
+            monitor_response = escalate_finding(
+                data_dir,
+                finding,
+            )
 
-            code = finding.get("finding")
-
-            if code and finding.get("usubjid"):
-
-                response = escalate_finding(
-                    data_dir,
-                    code,
-                    finding["usubjid"],
+            if monitor_response is not None:
+                escalation_results.append(
+                    {
+                        "category": category,
+                        "finding": finding,
+                        "response": monitor_response,
+                    }
                 )
 
-                if response is not None:
-
-                    escalation_results.append(
-                        {
-                            "finding": code,
-                            "usubjid": finding["usubjid"],
-                            "monitor_decision": response,
-                        }
-                    )
-
-    return query_results, escalation_results
+    return (
+        query_results,
+        escalation_results,
+    )
 
 
-def run(data_dir, cut=None):
+def run(
+    data_dir,
+    cut=None,
+):
     """
-    Run the complete ATLAS Stage 1 pipeline.
+    Run the complete deterministic ATLAS pipeline.
 
-    Data is loaded once here.
+    Steps:
+        1. Load raw data
+        2. Apply requested cut
+        3. Apply corrections available at that cut
+        4. Build the study graph
+        5. Run deterministic checks
+        6. Scan documents for embedded instructions
+        7. Handle site queries / monitor escalations
 
-    If a cut is supplied:
-        1. records available by that cut are selected
-        2. corrections available by that cut are applied
-
-    Then:
-        CSV data
-            ↓
-        graph
-            ↓
-        deterministic checks
-            ↓
-        document trap detection
-            ↓
-        site queries
-            ↓
-        monitor escalations
+    Returns:
+        stats, findings
     """
 
-    # -------------------------------------------------------------
-    # Load all structured data
-    # -------------------------------------------------------------
+    # ---------------------------------------------------------
+    # Load data
+    # ---------------------------------------------------------
 
-    data = load_data(data_dir)
+    raw_data = load_data(
+        data_dir
+    )
 
     reference_ranges = load_reference_ranges(
         data_dir
@@ -227,48 +274,67 @@ def run(data_dir, cut=None):
         data_dir
     )
 
-    # -------------------------------------------------------------
-    # Apply historical cut if requested
-    # -------------------------------------------------------------
+    # ---------------------------------------------------------
+    # Determine cut
+    # ---------------------------------------------------------
 
-    if cut is not None:
-
-        data = get_cut_view(
-            data,
-            cut,
+    if cut is None:
+        effective_cut = max(
+            int(row["cut"])
+            for row in cuts_rows
         )
+    else:
+        effective_cut = int(cut)
 
-        data = apply_corrections(
-            data,
-            corrections,
-            cut,
-        )
+    # ---------------------------------------------------------
+    # Apply cut
+    # ---------------------------------------------------------
 
-    # -------------------------------------------------------------
-    # Build study graph
-    # -------------------------------------------------------------
-
-    graph, stats = build(data)
-
-    write_stats(
-        stats,
-        "graph_stats.json",
+    data = get_cut_view(
+        raw_data,
+        effective_cut,
     )
 
-    # -------------------------------------------------------------
-    # Run deterministic clinical checks
-    # -------------------------------------------------------------
+    # ---------------------------------------------------------
+    # Apply corrections available at this cut
+    # ---------------------------------------------------------
+
+    data = apply_corrections(
+        data,
+        corrections,
+        effective_cut,
+    )
+
+    # ---------------------------------------------------------
+    # Build graph
+    # ---------------------------------------------------------
+
+    graph, stats = build(
+        data
+    )
+
+    # ---------------------------------------------------------
+    # Deterministic findings
+    # ---------------------------------------------------------
 
     findings = {
-        "hys_law_candidates": checks.hys_law_candidates(
-            graph,
-            reference_ranges,
+
+        # Hy's Law
+        "hys_law_candidates": (
+            checks.hys_law_candidates(
+                graph,
+                reference_ranges,
+            )
         ),
 
-        "seriousness_miscoded": checks.hospitalization_overrides(
-            data
+        # Hospitalisation override
+        "seriousness_miscoded": (
+            checks.hospitalization_overrides(
+                data
+            )
         ),
 
+        # Prohibited medications
         "prohibited_medication_use": (
             checks.prohibited_medication_use(
                 data,
@@ -277,53 +343,112 @@ def run(data_dir, cut=None):
             )
         ),
 
-        "dosing_errors": checks.dosing_errors(
-            data
+        # Dosing errors
+        "dosing_errors": (
+            checks.dosing_errors(
+                data
+            )
+        ),
+
+        # Visit-window deviations
+        "visit_window_deviations": (
+            checks.visit_window_deviations(
+                data,
+                cut=effective_cut,
+                cuts_rows=cuts_rows,
+            )
         ),
     }
 
-    # -------------------------------------------------------------
-    # Documents: detect planted instructions
-    #
-    # IMPORTANT:
-    # These instructions are evidence and are NEVER executed.
-    # -------------------------------------------------------------
+    # ---------------------------------------------------------
+    # Scan protocol/lab-manual documents
+    # ---------------------------------------------------------
 
     doc_flags = []
 
-    for name in (
-        "lab-manual.md",
-        "lab-manual_v3.md",
-    ):
+    versions_to_scan = sorted(
+        set(
+            int(row["protocol_version"])
+            for row in cuts_rows
+        )
+    )
+
+    for version in versions_to_scan:
 
         try:
-
-            with open(
-                f"{data_dir}/documents/{name}",
-                encoding="utf-8",
-            ) as f:
-
-                text = f.read()
+            protocol_text = load_protocol_text(
+                data_dir,
+                version,
+            )
 
             doc_flags.extend(
                 scan_for_embedded_instructions(
-                    text,
-                    name,
+                    protocol_text,
+                    f"protocol_v{version}.md",
                 )
             )
 
         except FileNotFoundError:
             pass
 
+    # Lab manual
+    lab_manual_path = os.path.join(
+        data_dir,
+        "documents",
+        "lab-manual.md",
+    )
+
+    if os.path.exists(
+        lab_manual_path
+    ):
+        with open(
+            lab_manual_path,
+            encoding="utf-8",
+        ) as f:
+            lab_manual_text = f.read()
+
+        doc_flags.extend(
+            scan_for_embedded_instructions(
+                lab_manual_text,
+                "lab-manual.md",
+            )
+        )
+
+    # Lab manual v3
+    lab_manual_v3_path = os.path.join(
+        data_dir,
+        "documents",
+        "lab-manual_v3.md",
+    )
+
+    if os.path.exists(
+        lab_manual_v3_path
+    ):
+        with open(
+            lab_manual_v3_path,
+            encoding="utf-8",
+        ) as f:
+            lab_manual_v3_text = f.read()
+
+        doc_flags.extend(
+            scan_for_embedded_instructions(
+                lab_manual_v3_text,
+                "lab-manual_v3.md",
+            )
+        )
+
     findings[
         "embedded_instructions_detected_not_followed"
     ] = doc_flags
 
-    # -------------------------------------------------------------
-    # Handle site queries and monitor escalations
-    # -------------------------------------------------------------
+    # ---------------------------------------------------------
+    # Handle site queries / monitor escalations
+    # ---------------------------------------------------------
 
-    query_results, escalation_results = handle_findings(
+    (
+        query_results,
+        escalation_results,
+    ) = handle_findings(
         data_dir,
         findings,
     )
@@ -336,7 +461,10 @@ def run(data_dir, cut=None):
         "monitor_escalations"
     ] = escalation_results
 
-    return stats, findings
+    return (
+        stats,
+        findings,
+    )
 
 
 def answer(
@@ -347,31 +475,20 @@ def answer(
     """
     Answer a natural-language ATLAS question.
 
-    The same loader/cut/correction layer is used here as in run().
+    The answer agent handles:
+        COUNT
+        LOOKUP
+        FINDING
+        TRAP
 
-    Examples:
-
-        answer(
-            "hackathon-data",
-            "How many subjects are in the study?"
-        )
-
-        answer(
-            "hackathon-data",
-            "Look up subject 042-S01-001"
-        )
-
-        answer(
-            "hackathon-data",
-            "Find Hy's law candidates"
-        )
+    The same cut/correction logic used by run() is applied first.
     """
 
-    # -------------------------------------------------------------
-    # Load structured data
-    # -------------------------------------------------------------
+    # ---------------------------------------------------------
+    # Load data
+    # ---------------------------------------------------------
 
-    data = load_data(
+    raw_data = load_data(
         data_dir
     )
 
@@ -387,26 +504,40 @@ def answer(
         data_dir
     )
 
-    # -------------------------------------------------------------
-    # Apply cut + corrections
-    # -------------------------------------------------------------
+    # ---------------------------------------------------------
+    # Determine effective cut
+    # ---------------------------------------------------------
 
-    if cut is not None:
-
-        data = get_cut_view(
-            data,
-            cut,
+    if cut is None:
+        effective_cut = max(
+            int(row["cut"])
+            for row in cuts_rows
         )
+    else:
+        effective_cut = int(cut)
 
-        data = apply_corrections(
-            data,
-            corrections,
-            cut,
-        )
+    # ---------------------------------------------------------
+    # Apply cut
+    # ---------------------------------------------------------
 
-    # -------------------------------------------------------------
-    # Send already-loaded data to Answer Agent
-    # -------------------------------------------------------------
+    data = get_cut_view(
+        raw_data,
+        effective_cut,
+    )
+
+    # ---------------------------------------------------------
+    # Apply corrections
+    # ---------------------------------------------------------
+
+    data = apply_corrections(
+        data,
+        corrections,
+        effective_cut,
+    )
+
+    # ---------------------------------------------------------
+    # Answer question
+    # ---------------------------------------------------------
 
     return answer_question(
         question=question,
@@ -418,47 +549,62 @@ def answer(
     )
 
 
-if __name__ == "__main__":
-
-    parser = argparse.ArgumentParser()
+def main():
+    parser = argparse.ArgumentParser(
+        description="ATLAS Study Knowledge Graph"
+    )
 
     parser.add_argument(
         "--data",
-        required=True,
+        default="hackathon-data",
+        help="Path to hackathon data directory",
     )
 
     parser.add_argument(
         "--cut",
         type=int,
         default=None,
+        help="Historical data cut to use",
     )
 
     parser.add_argument(
         "--out",
         default="stage1_public.json",
+        help="Output findings JSON file",
     )
 
     args = parser.parse_args()
 
-    # -------------------------------------------------------------
-    # Run complete ATLAS pipeline
-    # -------------------------------------------------------------
+    # ---------------------------------------------------------
+    # Run ATLAS
+    # ---------------------------------------------------------
 
     stats, findings = run(
         args.data,
         cut=args.cut,
     )
 
-    # -------------------------------------------------------------
-    # Write public findings
-    # -------------------------------------------------------------
+    # ---------------------------------------------------------
+    # Print statistics
+    # ---------------------------------------------------------
+
+    print(
+        json.dumps(
+            stats,
+            indent=2,
+            default=str,
+        )
+    )
+
+    # ---------------------------------------------------------
+    # Write findings
+    # ---------------------------------------------------------
 
     with open(
         args.out,
         "w",
         encoding="utf-8",
     ) as f:
-
         json.dump(
             findings,
             f,
@@ -466,17 +612,10 @@ if __name__ == "__main__":
             default=str,
         )
 
-    # -------------------------------------------------------------
-    # Console output
-    # -------------------------------------------------------------
-
-    print(
-        json.dumps(
-            stats,
-            indent=2,
-        )
-    )
-
     print(
         f"Findings written to {args.out}"
     )
+
+
+if __name__ == "__main__":
+    main()
