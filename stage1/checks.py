@@ -1,39 +1,21 @@
 """
-Owned by: Person D
+Owned by: Person A
 
-The core scoring logic.
+Deterministic protocol and safety checks for ATLAS.
 
-Every check returns findings shaped like:
-
-    {
-        "usubjid": "042-S01-001",
-        "finding": "HYS_LAW_CANDIDATE",
-        "evidence": [
-            ("LB", "042-S01-001", "12"),
-            ("LB", "042-S01-001", "13")
-        ],
-        "detail": "ALT 3.2xULN and BILI 2.1xULN within 14 days"
-    }
-
-Evidence is always a list of:
-
-    (domain, USUBJID, seq)
-
-These triples identify the exact source records supporting
-the finding.
-
-Never cite a triple that does not support the claim.
-
-If a check finds nothing, return an empty list.
-That IS the answer "none".
-
-Do not return a placeholder or guess.
+Rules implemented:
+- Hy's Law candidates
+- Hospitalisation seriousness override
+- Prohibited medication use by protocol version
+- Dosing errors
+- Visit-window / protocol deviations
 """
 
+from datetime import timedelta
+
 from .cleaning import (
-    normalize_lab_value,
     get_reference_range,
-    OK,
+    normalize_lab_value,
     parse_date,
 )
 
@@ -48,206 +30,110 @@ def hys_law_candidates(graph, reference_ranges):
         total bilirubin > 2x ULN
         within 14 days.
 
-    This function only identifies candidates.
-
-    Final adjudication may require checking for:
-        - cholestasis
-        - alternative explanations
-        - other clinical information
-
-    Site-specific laboratory ranges are used:
-
-        S07 -> S07 range
-        other sites -> CENTRAL range
-
-    All measured values and ranges are compared in the same
-    normalized unit.
+    Site-specific laboratory reference ranges are used.
+    S07 ALT/AST values are normalized by cleaning.py.
     """
 
     findings = []
 
-    # ---------------------------------------------------------
-    # Process each subject independently.
-    # ---------------------------------------------------------
+    for subject_id, subject in graph.get("subjects", {}).items():
+        site_id = subject.get("SITEID")
 
-    for usubjid, subj in graph["subjects"].items():
+        alt_ast = []
+        bilirubin = []
 
-        site = subj["site"]
+        for r in subject.get("records", {}).get("LB", []):
+            testcd = r.get("LBTESTCD")
+            raw_value = r.get("LBORRES")
+            unit = r.get("LBORRESU", "")
 
-        lb_records = subj["records"].get("LB", [])
+            if testcd not in {"ALT", "AST", "BILI"}:
+                continue
 
-        # -----------------------------------------------------
-        # Get the correct reference ranges for this subject's
-        # laboratory/site.
-        # -----------------------------------------------------
-
-        alt_range = get_reference_range(
-            "ALT",
-            site,
-            reference_ranges,
-        )
-
-        ast_range = get_reference_range(
-            "AST",
-            site,
-            reference_ranges,
-        )
-
-        bili_range = get_reference_range(
-            "BILI",
-            site,
-            reference_ranges,
-        )
-
-        # If any required reference range is unavailable,
-        # do not guess.
-        if (
-            alt_range is None
-            or ast_range is None
-            or bili_range is None
-        ):
-            continue
-
-        _, alt_high, _ = alt_range
-        _, ast_high, _ = ast_range
-        _, bili_high, _ = bili_range
-
-        # -----------------------------------------------------
-        # Store liver enzyme and bilirubin threshold hits.
-        #
-        # Each item:
-        #
-        #     (date, domain, sequence)
-        #
-        # -----------------------------------------------------
-
-        liver_hits = []
-        bili_hits = []
-
-        # -----------------------------------------------------
-        # Inspect laboratory records.
-        # -----------------------------------------------------
-
-        for r in lb_records:
-
-            value, unit, status = normalize_lab_value(
-                r.get("LBORRES"),
-                r.get("LBORRESU"),
-                r.get("LBTESTCD"),
-                site,
+            value, normalized_unit, status = normalize_lab_value(
+                raw_value,
+                unit,
+                testcd,
+                site_id,
                 reference_ranges,
             )
 
-            # Non-numeric / missing / detection-limit values
-            # cannot be safely used in arithmetic.
-            if status != OK:
+            if status != "OK" or value is None:
                 continue
 
-            date = parse_date(
-                r.get("LBDTC")
-            )
+            date = parse_date(r.get("LBDTC"))
 
             # Invalid dates cannot be used for the
             # 14-day window.
             if date is None:
                 continue
 
-            testcd = r.get("LBTESTCD")
+            low, high, range_unit = get_reference_range(
+                testcd,
+                site_id,
+                reference_ranges,
+            )
 
-            # -------------------------------------------------
-            # ALT > 3x ULN
-            # -------------------------------------------------
+            if high is None:
+                continue
 
-            if (
-                testcd == "ALT"
-                and value > 3 * alt_high
-            ):
-                liver_hits.append(
-                    (
-                        date,
-                        "LB",
-                        r["LBSEQ"],
+            if testcd in {"ALT", "AST"}:
+                if value > 3 * high:
+                    alt_ast.append(
+                        {
+                            "record": r,
+                            "date": date,
+                            "value": value,
+                            "uln": high,
+                            "unit": normalized_unit,
+                        }
                     )
-                )
 
-            # -------------------------------------------------
-            # AST > 3x ULN
-            # -------------------------------------------------
-
-            elif (
-                testcd == "AST"
-                and value > 3 * ast_high
-            ):
-                liver_hits.append(
-                    (
-                        date,
-                        "LB",
-                        r["LBSEQ"],
+            elif testcd == "BILI":
+                if value > 2 * high:
+                    bilirubin.append(
+                        {
+                            "record": r,
+                            "date": date,
+                            "value": value,
+                            "uln": high,
+                            "unit": normalized_unit,
+                        }
                     )
+
+        # Pair elevated liver enzyme and bilirubin results
+        # occurring within 14 days.
+        for enzyme in alt_ast:
+            for bili in bilirubin:
+                difference = abs(
+                    (enzyme["date"] - bili["date"]).days
                 )
 
-            # -------------------------------------------------
-            # Total bilirubin > 2x ULN
-            # -------------------------------------------------
-
-            elif (
-                testcd == "BILI"
-                and value > 2 * bili_high
-            ):
-                bili_hits.append(
-                    (
-                        date,
-                        "LB",
-                        r["LBSEQ"],
-                    )
-                )
-
-        # -----------------------------------------------------
-        # Pair liver-enzyme and bilirubin abnormalities.
-        #
-        # Hy's law requires the two abnormalities to occur
-        # within 14 days of each other.
-        # -----------------------------------------------------
-
-        for (
-            liver_date,
-            liver_domain,
-            liver_seq,
-        ) in liver_hits:
-
-            for (
-                bili_date,
-                bili_domain,
-                bili_seq,
-            ) in bili_hits:
-
-                difference_days = abs(
-                    (liver_date - bili_date).days
-                )
-
-                if difference_days <= 14:
+                if difference <= 14:
+                    enzyme_record = enzyme["record"]
+                    bili_record = bili["record"]
 
                     findings.append(
                         {
-                            "usubjid": usubjid,
+                            "usubjid": subject_id,
                             "finding": "HYS_LAW_CANDIDATE",
                             "evidence": [
                                 (
-                                    liver_domain,
-                                    usubjid,
-                                    liver_seq,
+                                    "LB",
+                                    subject_id,
+                                    enzyme_record.get("LBSEQ"),
                                 ),
                                 (
-                                    bili_domain,
-                                    usubjid,
-                                    bili_seq,
+                                    "LB",
+                                    subject_id,
+                                    bili_record.get("LBSEQ"),
                                 ),
                             ],
                             "detail": (
                                 f"liver enzyme >3xULN on "
-                                f"{liver_date}, "
+                                f"{enzyme['date'].isoformat()}, "
                                 f"bilirubin >2xULN on "
-                                f"{bili_date}"
+                                f"{bili['date'].isoformat()}"
                             ),
                         }
                     )
@@ -262,32 +148,29 @@ def hospitalization_overrides(data):
         AESHOSP = Y
 
     makes the adverse event serious regardless of AESER.
-
-    Therefore, flag:
-
-        AESHOSP = Y
-        AESER = N
-
-    as a seriousness miscoding.
     """
 
     findings = []
 
     for r in data.get("AE", []):
+        hospitalization = str(
+            r.get("AESHOSP", "")
+        ).strip().upper()
 
-        if (
-            r.get("AESHOSP") == "Y"
-            and r.get("AESER") == "N"
-        ):
+        serious = str(
+            r.get("AESER", "")
+        ).strip().upper()
+
+        if hospitalization == "Y" and serious != "Y":
             findings.append(
                 {
-                    "usubjid": r["USUBJID"],
-                    "finding": "SERIOUSNESS_MISCODED",
+                    "usubjid": r.get("USUBJID"),
+                    "finding": "SERIOUS_AE_HOSPITALIZATION_OVERRIDE",
                     "evidence": [
                         (
                             "AE",
-                            r["USUBJID"],
-                            r["AESEQ"],
+                            r.get("USUBJID"),
+                            r.get("AESEQ"),
                         )
                     ],
                     "detail": (
@@ -312,10 +195,10 @@ def prohibited_medication_use(
     Protocol versions:
 
         v1/v2:
-            SYSTEMIC_GLUCOCORTICOID
+            SYSTEMIC GLUCOCORTICOID
 
         v3:
-            SYSTEMIC_GLUCOCORTICOID
+            SYSTEMIC GLUCOCORTICOID
             SULFONYLUREA
     """
 
@@ -324,6 +207,9 @@ def prohibited_medication_use(
     findings = []
 
     for r in data.get("CM", []):
+        medication_class = str(
+            r.get("CMCLAS", "")
+        ).strip().upper()
 
         cut = int(
             r.get("cut_available", 0)
@@ -343,22 +229,16 @@ def prohibited_medication_use(
             version
         )
 
-        medication_class = (
-            r.get("CMCLAS", "")
-            .upper()
-        )
-
         if medication_class in prohibited:
-
             findings.append(
                 {
-                    "usubjid": r["USUBJID"],
+                    "usubjid": r.get("USUBJID"),
                     "finding": "PROHIBITED_MEDICATION",
                     "evidence": [
                         (
                             "CM",
-                            r["USUBJID"],
-                            r["CMSEQ"],
+                            r.get("USUBJID"),
+                            r.get("CMSEQ"),
                         )
                     ],
                     "detail": (
@@ -381,71 +261,227 @@ def dosing_errors(data):
         PLACEBO arm:
             expected dose = 0 mg
 
-    Any administered dose different from the expected dose
-    is flagged as a dosing error.
+    Any administered dose different from the expected
+    dose is a dosing error.
     """
+
+    expected_by_arm = {
+        "DRUG": 10.0,
+        "PLACEBO": 0.0,
+    }
+
+    # Get treatment assignment from DM.
+    arm_by_subject = {}
+
+    for r in data.get("DM", []):
+        subject = r.get("USUBJID")
+        arm = str(
+            r.get("ARM", "")
+        ).strip().upper()
+
+        if subject:
+            arm_by_subject[subject] = arm
 
     findings = []
 
-    # ---------------------------------------------------------
-    # Map each subject to their treatment arm.
-    # ---------------------------------------------------------
-
-    dm_arm = {
-        r["USUBJID"]: r["ARM"]
-        for r in data.get("DM", [])
-    }
-
-    # ---------------------------------------------------------
-    # Inspect exposure records.
-    # ---------------------------------------------------------
-
     for r in data.get("EX", []):
+        subject = r.get("USUBJID")
 
-        usubjid = r["USUBJID"]
+        arm = arm_by_subject.get(subject)
 
-        arm = dm_arm.get(usubjid)
-
-        # If there is no known treatment arm, do not guess.
-        if arm is None:
+        if arm not in expected_by_arm:
             continue
+
+        expected = expected_by_arm[arm]
+
+        raw_dose = r.get("EXDOSE")
 
         try:
-            dose = float(
-                r["EXDOSE"]
-            )
-        except (
-            ValueError,
-            TypeError,
-        ):
-            # Non-numeric dose cannot be compared safely.
+            actual = float(raw_dose)
+        except (TypeError, ValueError):
             continue
 
-        if arm == "DRUG":
-            expected = 10
-        elif arm == "PLACEBO":
-            expected = 0
-        else:
-            # Unknown arm — do not guess expected dose.
-            continue
-
-        if dose != expected:
-
+        if actual != expected:
             findings.append(
                 {
-                    "usubjid": usubjid,
+                    "usubjid": subject,
                     "finding": "DOSING_ERROR",
                     "evidence": [
                         (
                             "EX",
-                            usubjid,
-                            r["EXSEQ"],
+                            subject,
+                            r.get("EXSEQ"),
                         )
                     ],
                     "detail": (
-                        f"dose {dose}mg, "
-                        f"expected {expected}mg "
-                        f"for arm {arm}"
+                        f"{arm} arm received {actual} mg; "
+                        f"expected {expected:g} mg"
+                    ),
+                }
+            )
+
+    return findings
+
+
+def visit_window_deviations(
+    data,
+    cut=12,
+    cuts_rows=None,
+):
+    """
+    Detect visits performed outside the protocol-defined
+    visit window.
+
+    Protocol:
+
+        v1: +/- 7 days
+        v2/v3: +/- 3 days
+
+    Visit schedule is relative to each subject's
+    baseline date:
+
+        SCREENING = -14
+        BASELINE  = 0
+        WEEK2     = 14
+        WEEK4     = 28
+        WEEK8     = 56
+        WEEK12    = 84
+        WEEK16    = 112
+        WEEK20    = 140
+        WEEK24    = 168
+        EOS       = 182
+
+    A visit outside the allowed window is a
+    protocol deviation.
+    """
+
+    from .documents import (
+        active_protocol_version,
+        visit_window_days,
+    )
+
+    schedule = {
+        "SCREENING": -14,
+        "BASELINE": 0,
+        "WEEK2": 14,
+        "WEEK4": 28,
+        "WEEK8": 56,
+        "WEEK12": 84,
+        "WEEK16": 112,
+        "WEEK20": 140,
+        "WEEK24": 168,
+        "EOS": 182,
+    }
+
+    findings = []
+
+    # Determine protocol version at this cut.
+    version = None
+
+    if cuts_rows is not None:
+        version = active_protocol_version(
+            cut,
+            cuts_rows,
+        )
+
+    if version is None:
+        version = 1
+
+    window = visit_window_days(version)
+
+    # Find each subject's baseline date.
+    baseline_dates = {}
+
+    for r in data.get("VS", []):
+        visit = str(
+            r.get("VISIT", "")
+        ).strip().upper()
+
+        if visit != "BASELINE":
+            continue
+
+        subject = r.get("USUBJID")
+
+        date = parse_date(
+            r.get("VSDTC")
+        )
+
+        if subject and date is not None:
+            baseline_dates.setdefault(
+                subject,
+                date,
+            )
+
+    # Avoid reporting the same visit repeatedly
+    # because VS contains multiple measurements
+    # for the same visit.
+    seen = set()
+
+    for r in data.get("VS", []):
+        subject = r.get("USUBJID")
+
+        visit = str(
+            r.get("VISIT", "")
+        ).strip().upper()
+
+        actual_date = parse_date(
+            r.get("VSDTC")
+        )
+
+        if not subject:
+            continue
+
+        if visit not in schedule:
+            continue
+
+        if actual_date is None:
+            continue
+
+        baseline = baseline_dates.get(subject)
+
+        if baseline is None:
+            continue
+
+        scheduled_date = (
+            baseline
+            + timedelta(
+                days=schedule[visit]
+            )
+        )
+
+        difference = (
+            actual_date - scheduled_date
+        ).days
+
+        key = (
+            subject,
+            visit,
+            actual_date,
+        )
+
+        if key in seen:
+            continue
+
+        seen.add(key)
+
+        if abs(difference) > window:
+            findings.append(
+                {
+                    "usubjid": subject,
+                    "finding": "VISIT_WINDOW_DEVIATION",
+                    "evidence": [
+                        (
+                            "VS",
+                            subject,
+                            r.get("VSSEQ"),
+                        )
+                    ],
+                    "detail": (
+                        f"{visit} occurred "
+                        f"{difference:+d} days from "
+                        f"scheduled day; allowed "
+                        f"window is +/-{window} days "
+                        f"under protocol v{version}"
                     ),
                 }
             )
@@ -458,30 +494,40 @@ def answer_or_none(
     question_context="",
 ):
     """
-    Convert a findings list into an answer structure.
-
-    If there are no findings:
-
-        answer = "none"
-
-    Never fabricate a finding.
+    Convert a list of findings into a simple ATLAS answer.
     """
 
     if not findings:
-
         return {
             "answer": "none",
             "evidence": [],
             "reason": (
-                f"no matching records found "
-                f"({question_context})"
+                f"No findings for {question_context}."
+                if question_context
+                else "No findings."
             ),
         }
 
+    evidence = []
+
+    for finding in findings:
+        for item in finding.get(
+            "evidence",
+            [],
+        ):
+            if item not in evidence:
+                evidence.append(item)
+
     return {
         "answer": findings,
-        "evidence": [
-            finding["evidence"]
-            for finding in findings
-        ],
+        "evidence": evidence,
+        "reason": (
+            f"{len(findings)} finding(s)."
+        ),
     }
+
+
+if __name__ == "__main__":
+    print(
+        "checks.py loaded successfully."
+    )
