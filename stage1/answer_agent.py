@@ -642,9 +642,18 @@ def extract_domain(question):
 
     upper = question.upper()
 
+    # Explicit domain names, e.g. "LB record" or "AE domain"
     for domain in SEQ_FIELD:
         if re.search(
             rf"\b{re.escape(domain)}\b",
+            upper,
+        ):
+            return domain
+
+    # SDTM variable names, e.g. LBORRES -> LB, AEDECOD -> AE
+    for domain in SEQ_FIELD:
+        if re.search(
+            rf"\b{re.escape(domain)}[A-Z0-9_]+\b",
             upper,
         ):
             return domain
@@ -670,7 +679,6 @@ def extract_domain(question):
 
     return None
 
-
 # ============================================================
 # SUBJECT ID EXTRACTION
 # ============================================================
@@ -694,15 +702,15 @@ def extract_usubjid(question):
 # ============================================================
 
 def extract_sequence(question):
-    """Extract an explicit sequence number."""
+    """Extract an explicit sequence/record number."""
 
     patterns = [
         (
-            r"\b(?:seq|sequence)"
+            r"\b(?:seq|sequence|record)"
             r"\s*(?:number)?"
             r"\s*[:=]?\s*(\d+)\b"
         ),
-        r"\bSEQ\s*[:=]?\s*(\d+)\b",
+        r"\b(?:SEQ|RECORD)\s*[:=]?\s*(\d+)\b",
     ]
 
     for pattern in patterns:
@@ -716,7 +724,6 @@ def extract_sequence(question):
             return match.group(1)
 
     return None
-
 
 # ============================================================
 # MAIN ANSWER FUNCTION
