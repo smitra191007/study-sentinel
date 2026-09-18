@@ -54,7 +54,7 @@ def normalize_lab_value(raw, unit, testcd, site_id, reference_ranges):
         return None, unit, MISSING  # unrecognised format — treat as missing, don't crash
 
     # Unit conversion: ukat/L -> U/L for ALT/AST at the local lab (site S07).
-    if unit == "ukat/L" and testcd in ("ALT", "AST"):
+    if site_id == "S07" and unit == "ukat/L" and testcd in ("ALT", "AST"):
         value = value * UKAT_TO_U_PER_L
         unit = "U/L"
 
