@@ -14,7 +14,8 @@ from __future__ import annotations
 
 from stage2.memory import CrossCycleMemory
 from stage2.nodes import compliance, data_manager, human_gate, medical_review
-from stage2.schema import Finding
+from stage2.schema import Finding,make_finding_id
+from stage1.atlas import run as atlas_run
 from stage2.trace_logger import TraceLogger
 
 # TODO: point this at your real Stage 1 detector once package paths are final.
@@ -23,26 +24,72 @@ from stage2.trace_logger import TraceLogger
 
 def detect(data_dir: str) -> list[Finding]:
     """
-    Stage 1 hookup. Replace this placeholder with a real call into
-    stage1.atlas.Atlas(...).build() + query({"type": "Finding", ...}), then
-    map each raw Stage 1 finding into a stage2.schema.Finding.
-
-    TODO (either of you — whoever gets to it first):
-        atlas = Atlas(data_dir=data_dir).build()
-        raw = atlas.query({"type": "Finding", "filters": {}})["result"]
-        return [
-            Finding(
-                finding_id=make_finding_id(r["subject_id"], r["finding_type"], ...),
-                subject_id=r["subject_id"],
-                site_id=...,
-                finding_type=r["finding_type"],
-                detail=r["detail"],
-                record_refs=[...],
-            )
-            for r in raw
-        ]
+    Run Stage 1 ATLAS and map its deterministic findings into
+    Stage 2 Finding objects.
     """
-    return []
+    _, raw_findings = atlas_run(data_dir)
+
+    findings = []
+
+    for finding_type, records in raw_findings.items():
+        if not isinstance(records, list):
+            continue
+
+        for index, r in enumerate(records):
+            if not isinstance(r, dict):
+                continue
+
+            subject_id = (
+                r.get("usubjid")
+                or r.get("subject_id")
+                or r.get("USUBJID")
+                or ""
+            )
+
+            if not subject_id:
+                continue
+
+            detail = str(r.get("detail", ""))
+
+            site_id = r.get("site_id", "")
+
+            if not site_id and "-S" in subject_id:
+                site_id = subject_id.split("-S", 1)[1].split("-", 1)[0]
+                site_id = f"S{site_id}"
+
+            raw_evidence = r.get("evidence", [])
+
+            record_refs = []
+            for ref in raw_evidence:
+                if isinstance(ref, (list, tuple)):
+                    record_refs.append(":".join(str(x) for x in ref))
+                else:
+                    record_refs.append(str(ref))
+
+            detail_key = (
+                record_refs[0]
+                if record_refs
+                else str(index)
+            )
+
+            finding_id = make_finding_id(
+                subject_id,
+                finding_type,
+                detail_key,
+            )
+
+            findings.append(
+                Finding(
+                    finding_id=finding_id,
+                    subject_id=subject_id,
+                    site_id=site_id,
+                    finding_type=finding_type,
+                    detail=detail,
+                    record_refs=record_refs,
+                )
+            )
+
+    return findings
 
 
 def execute(findings: list[Finding], logger: TraceLogger) -> list[Finding]:
