@@ -1,0 +1,2 @@
+# stdlib only for stage1 — no external deps needed for the starter kit.
+# Add here if you introduce pandas/networkx etc, and pin versions.
