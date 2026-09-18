@@ -6,10 +6,10 @@ import argparse
 import json
 import sys
 
-from loader import load_data, load_reference_ranges, load_corrections, load_cuts, get_cut_view, apply_corrections
-from graph import build, write_stats
-from documents import active_protocol_version, prohibited_meds, scan_for_embedded_instructions
-import checks
+from .loader import load_data, load_reference_ranges, load_corrections, load_cuts, get_cut_view, apply_corrections
+from .graph import build, write_stats
+from .documents import active_protocol_version, prohibited_meds, scan_for_embedded_instructions
+from . import checks
 
 
 def run(data_dir, cut=None):

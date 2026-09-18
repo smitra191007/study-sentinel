@@ -17,7 +17,7 @@ If a check finds nothing, return an empty list — that IS the answer "none".
 Do not return a placeholder or a guess.
 """
 from datetime import timedelta
-from cleaning import normalize_lab_value, get_central_range, OK, parse_date
+from .cleaning import normalize_lab_value, get_central_range, OK, parse_date
 
 
 def hys_law_candidates(graph, reference_ranges):
@@ -85,7 +85,7 @@ def hospitalization_overrides(data):
 
 def prohibited_medication_use(data, prohibited_meds_by_version, cuts_rows):
     """Flags CM records whose CMCLAS is prohibited under the protocol version active at that record's cut."""
-    from documents import active_protocol_version
+    from .documents import active_protocol_version
     findings = []
     for r in data.get("CM", []):
         cut = int(r.get("cut_available", 0))
