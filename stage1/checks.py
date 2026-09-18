@@ -111,7 +111,12 @@ def dosing_errors(data):
             dose = float(r["EXDOSE"])
         except (ValueError, TypeError):
             continue
-        expected = 10 if arm == "DRUG" else 0
+        if arm == "DRUG":
+            expected = 10
+        elif arm == "PLACEBO":
+            expected = 0
+        else:
+            continue
         if dose != expected:
             findings.append({
                 "usubjid": r["USUBJID"],
