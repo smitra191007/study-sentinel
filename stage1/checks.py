@@ -1,5 +1,5 @@
 """
-Owned by: Person D
+Owned by: Person B
 The core scoring logic. Every check returns findings shaped like:
 
     {
