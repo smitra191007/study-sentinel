@@ -52,6 +52,73 @@ def build(data):
     }
     return graph, stats
 
+def trace_subject(graph, usubjid):
+    """
+    Trace all graph connections for one subject.
+
+    Returns a simple path-like structure showing:
+    Subject -> Site -> Domain -> Record
+    """
+    subject = graph["subjects"].get(usubjid)
+
+    if subject is None:
+        return {
+            "subject": usubjid,
+            "found": False,
+            "trace": []
+        }
+
+    trace = [
+        {
+            "type": "SUBJECT",
+            "id": usubjid
+        },
+        {
+            "type": "SITE",
+            "id": subject["site"]
+        }
+    ]
+
+    for domain, records in subject["records"].items():
+        for record in records:
+            seq_field = f"{domain}SEQ"
+
+            trace.append({
+                "type": "RECORD",
+                "domain": domain,
+                "seq": record.get(seq_field, ""),
+                "subject": record.get("USUBJID", usubjid)
+            })
+
+    return {
+        "subject": usubjid,
+        "found": True,
+        "trace": trace
+    }
+
+def trace_evidence(graph, evidence):
+    """
+    Trace a specific evidence path.
+
+    evidence format:
+    [domain, usubjid, sequence]
+    """
+    path = []
+
+    for domain, usubjid, seq in evidence:
+        subject = graph["subjects"].get(usubjid)
+
+        if subject is None:
+            continue
+
+        path.append({
+            "subject": usubjid,
+            "site": subject["site"],
+            "domain": domain,
+            "seq": str(seq)
+        })
+
+    return path
 
 def write_stats(stats, out_path="graph_stats.json"):
     with open(out_path, "w") as f:
