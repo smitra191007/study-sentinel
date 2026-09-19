@@ -1,17 +1,9 @@
 """
-stage2/nodes/data_manager.py  —  PERSON B (infra) + PERSON A (query wording)
+stage2/nodes/data_manager.py — PERSON B (infra) + PERSON A (query wording)
 
 Formats data-quality findings into precise, record-cited queries and sends
 them via POST /queries — but never twice on the same record (checked
 against cross-cycle memory).
-
-The doc's own example of a GOOD query:
-    "AE 'Fatigue' starts 2026-01-08, before first dose 2026-01-13. Please
-     verify the AE start date against source and correct or confirm."
-
-And a BAD query (avoid this):
-    "please check subject 042-S11-005" — names no record, asks nothing
-    specific, "earns nothing."
 """
 
 from __future__ import annotations
@@ -28,6 +20,7 @@ def draft_query_text(finding: Finding) -> str:
     looks wrong, and asks for ONE thing — never a vague "please check
     subject X".
     """
+
     refs = ", ".join(f"{e.domain}:{e.seq}" for e in finding.evidence)
 
     if finding.code == "AE_BEFORE_FIRST_DOSE":
@@ -90,29 +83,46 @@ def process(
     cut: int,
     logger: TraceLogger,
 ) -> list[Finding]:
+
     queries_raised = 0
     duplicates_skipped = 0
 
     for f in findings:
-        memory.touch(f.finding_id, f.usubjid, f.site, f.code)
 
+        memory.touch(
+            f.finding_id,
+            f.usubjid,
+            f.site,
+            f.code,
+        )
+
+        # Never send the same query twice.
         if memory.was_queried(f.finding_id):
             duplicates_skipped += 1
+
             logger.log(
                 node="data_manager",
                 finding_id=f.finding_id,
                 decision="skip_duplicate_query",
-                rationale="record already queried in a prior cycle — never repeat",
-                evidence=[e.to_dict() for e in f.evidence],
+                rationale=(
+                    "record already queried in a prior cycle — never repeat"
+                ),
+                evidence=[
+                    e.to_dict()
+                    for e in f.evidence
+                ],
             )
+
             f.node_trail.append("data_manager")
             continue
 
+        # Nothing to cite → nothing to query.
         if not f.evidence:
             f.node_trail.append("data_manager")
             continue
 
         primary = f.evidence[0]
+
         draft = QueryDraft(
             usubjid=f.usubjid,
             domain=primary.domain,
@@ -122,30 +132,57 @@ def process(
         )
 
         try:
-            response = client.post_query(draft)
+            # FIX:
+            # ApiClient.post_query() expects:
+            #   subject_id
+            #   query_text
+            #   record_refs
+            response = client.post_query(
+                subject_id=draft.usubjid,
+                query_text=draft.text,
+                record_refs=[
+                    {
+                        "domain": draft.domain,
+                        "seq": draft.seq,
+                    }
+                ],
+            )
+
             memory.mark_queried(f.finding_id)
+
             f.status = "queried"
             queries_raised += 1
+
             logger.log(
                 node="data_manager",
                 finding_id=f.finding_id,
-                decision=f"query_raised (id={response.id})",
+                decision=f"query_raised (id={response['id']})",
                 rationale=draft.text,
-                evidence=[e.to_dict() for e in f.evidence],
+                evidence=[
+                    e.to_dict()
+                    for e in f.evidence
+                ],
             )
+
         except Exception as exc:  # noqa: BLE001
+
             logger.log(
                 node="data_manager",
                 finding_id=f.finding_id,
                 decision="query_failed",
                 rationale=str(exc),
-                evidence=[e.to_dict() for e in f.evidence],
+                evidence=[
+                    e.to_dict()
+                    for e in f.evidence
+                ],
             )
 
         f.node_trail.append("data_manager")
 
     logger.log_summary(
         "data_manager",
-        f"{queries_raised} queries raised, {duplicates_skipped} duplicates skipped",
+        f"{queries_raised} queries raised, "
+        f"{duplicates_skipped} duplicates skipped",
     )
+
     return findings
