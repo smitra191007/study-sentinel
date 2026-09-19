@@ -1,0 +1,5530 @@
+[
+  {
+    "review_id": "9bb46d3803a908d6",
+    "category": "hys_law_candidates",
+    "review_priority": 1,
+    "finding": "HYS_LAW_CANDIDATE",
+    "subject_id": "042-S05-003",
+    "evidence": [
+      [
+        "LB",
+        "042-S05-003",
+        "31"
+      ],
+      [
+        "LB",
+        "042-S05-003",
+        "33"
+      ]
+    ],
+    "detail": "liver enzyme >3xULN on 2026-04-13, bilirubin >2xULN on 2026-04-13",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "36af7340eaf69823",
+    "category": "hys_law_candidates",
+    "review_priority": 1,
+    "finding": "HYS_LAW_CANDIDATE",
+    "subject_id": "042-S05-003",
+    "evidence": [
+      [
+        "LB",
+        "042-S05-003",
+        "32"
+      ],
+      [
+        "LB",
+        "042-S05-003",
+        "33"
+      ]
+    ],
+    "detail": "liver enzyme >3xULN on 2026-04-13, bilirubin >2xULN on 2026-04-13",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "b884f195b73e08d1",
+    "category": "hys_law_candidates",
+    "review_priority": 1,
+    "finding": "HYS_LAW_CANDIDATE",
+    "subject_id": "042-S08-014",
+    "evidence": [
+      [
+        "LB",
+        "042-S08-014",
+        "31"
+      ],
+      [
+        "LB",
+        "042-S08-014",
+        "33"
+      ]
+    ],
+    "detail": "liver enzyme >3xULN on 2026-04-14, bilirubin >2xULN on 2026-04-14",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "71efdb5062f89059",
+    "category": "hys_law_candidates",
+    "review_priority": 1,
+    "finding": "HYS_LAW_CANDIDATE",
+    "subject_id": "042-S08-014",
+    "evidence": [
+      [
+        "LB",
+        "042-S08-014",
+        "32"
+      ],
+      [
+        "LB",
+        "042-S08-014",
+        "33"
+      ]
+    ],
+    "detail": "liver enzyme >3xULN on 2026-04-14, bilirubin >2xULN on 2026-04-14",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "6bf2194c8597707a",
+    "category": "seriousness_miscoded",
+    "review_priority": 2,
+    "finding": "SERIOUS_AE_HOSPITALIZATION_OVERRIDE",
+    "subject_id": "042-S02-004",
+    "evidence": [
+      [
+        "AE",
+        "042-S02-004",
+        "1"
+      ]
+    ],
+    "detail": "AESHOSP=Y but AESER=N \u2014 protocol says this is serious regardless",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "a9b57ff758af019a",
+    "category": "dosing_errors",
+    "review_priority": 3,
+    "finding": "DOSING_ERROR",
+    "subject_id": "042-S09-004",
+    "evidence": [
+      [
+        "EX",
+        "042-S09-004",
+        "2"
+      ]
+    ],
+    "detail": "DRUG arm received 20.0 mg; expected 10 mg",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "c26b64667adb9fcf",
+    "category": "dosing_errors",
+    "review_priority": 3,
+    "finding": "DOSING_ERROR",
+    "subject_id": "042-S09-004",
+    "evidence": [
+      [
+        "EX",
+        "042-S09-004",
+        "3"
+      ]
+    ],
+    "detail": "DRUG arm received 20.0 mg; expected 10 mg",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "53056b5e8618126c",
+    "category": "dosing_errors",
+    "review_priority": 3,
+    "finding": "DOSING_ERROR",
+    "subject_id": "042-S09-004",
+    "evidence": [
+      [
+        "EX",
+        "042-S09-004",
+        "4"
+      ]
+    ],
+    "detail": "DRUG arm received 20.0 mg; expected 10 mg",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "fceb8e442a079952",
+    "category": "dosing_errors",
+    "review_priority": 3,
+    "finding": "DOSING_ERROR",
+    "subject_id": "042-S09-005",
+    "evidence": [
+      [
+        "EX",
+        "042-S09-005",
+        "2"
+      ]
+    ],
+    "detail": "PLACEBO arm received 10.0 mg; expected 0 mg",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "f404cf63afcd7b76",
+    "category": "dosing_errors",
+    "review_priority": 3,
+    "finding": "DOSING_ERROR",
+    "subject_id": "042-S09-005",
+    "evidence": [
+      [
+        "EX",
+        "042-S09-005",
+        "3"
+      ]
+    ],
+    "detail": "PLACEBO arm received 10.0 mg; expected 0 mg",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "41beb313db764c21",
+    "category": "dosing_errors",
+    "review_priority": 3,
+    "finding": "DOSING_ERROR",
+    "subject_id": "042-S09-005",
+    "evidence": [
+      [
+        "EX",
+        "042-S09-005",
+        "4"
+      ]
+    ],
+    "detail": "PLACEBO arm received 10.0 mg; expected 0 mg",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "c2c13ce31ba4defd",
+    "category": "dosing_errors",
+    "review_priority": 3,
+    "finding": "DOSING_ERROR",
+    "subject_id": "042-S09-006",
+    "evidence": [
+      [
+        "EX",
+        "042-S09-006",
+        "2"
+      ]
+    ],
+    "detail": "PLACEBO arm received 10.0 mg; expected 0 mg",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "1ab6855d74e7f425",
+    "category": "dosing_errors",
+    "review_priority": 3,
+    "finding": "DOSING_ERROR",
+    "subject_id": "042-S09-006",
+    "evidence": [
+      [
+        "EX",
+        "042-S09-006",
+        "3"
+      ]
+    ],
+    "detail": "PLACEBO arm received 10.0 mg; expected 0 mg",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "4318567c08a9b7f6",
+    "category": "dosing_errors",
+    "review_priority": 3,
+    "finding": "DOSING_ERROR",
+    "subject_id": "042-S09-006",
+    "evidence": [
+      [
+        "EX",
+        "042-S09-006",
+        "4"
+      ]
+    ],
+    "detail": "PLACEBO arm received 10.0 mg; expected 0 mg",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "fd572e4921ab74ea",
+    "category": "dosing_errors",
+    "review_priority": 3,
+    "finding": "DOSING_ERROR",
+    "subject_id": "042-S09-009",
+    "evidence": [
+      [
+        "EX",
+        "042-S09-009",
+        "2"
+      ]
+    ],
+    "detail": "PLACEBO arm received 10.0 mg; expected 0 mg",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "9b6f68b91284f0fd",
+    "category": "dosing_errors",
+    "review_priority": 3,
+    "finding": "DOSING_ERROR",
+    "subject_id": "042-S09-009",
+    "evidence": [
+      [
+        "EX",
+        "042-S09-009",
+        "3"
+      ]
+    ],
+    "detail": "PLACEBO arm received 10.0 mg; expected 0 mg",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "3983856a319a3cb8",
+    "category": "dosing_errors",
+    "review_priority": 3,
+    "finding": "DOSING_ERROR",
+    "subject_id": "042-S09-009",
+    "evidence": [
+      [
+        "EX",
+        "042-S09-009",
+        "4"
+      ]
+    ],
+    "detail": "PLACEBO arm received 10.0 mg; expected 0 mg",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "014c60f45d05219f",
+    "category": "dosing_errors",
+    "review_priority": 3,
+    "finding": "DOSING_ERROR",
+    "subject_id": "042-S09-011",
+    "evidence": [
+      [
+        "EX",
+        "042-S09-011",
+        "2"
+      ]
+    ],
+    "detail": "PLACEBO arm received 10.0 mg; expected 0 mg",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "ff5c543beeefbee1",
+    "category": "dosing_errors",
+    "review_priority": 3,
+    "finding": "DOSING_ERROR",
+    "subject_id": "042-S09-011",
+    "evidence": [
+      [
+        "EX",
+        "042-S09-011",
+        "3"
+      ]
+    ],
+    "detail": "PLACEBO arm received 10.0 mg; expected 0 mg",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "fdb66906273e4c95",
+    "category": "dosing_errors",
+    "review_priority": 3,
+    "finding": "DOSING_ERROR",
+    "subject_id": "042-S09-011",
+    "evidence": [
+      [
+        "EX",
+        "042-S09-011",
+        "4"
+      ]
+    ],
+    "detail": "PLACEBO arm received 10.0 mg; expected 0 mg",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "fad0c3f16ef9e177",
+    "category": "dosing_errors",
+    "review_priority": 3,
+    "finding": "DOSING_ERROR",
+    "subject_id": "042-S09-014",
+    "evidence": [
+      [
+        "EX",
+        "042-S09-014",
+        "2"
+      ]
+    ],
+    "detail": "DRUG arm received 20.0 mg; expected 10 mg",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "1fdbf9a264280997",
+    "category": "dosing_errors",
+    "review_priority": 3,
+    "finding": "DOSING_ERROR",
+    "subject_id": "042-S09-014",
+    "evidence": [
+      [
+        "EX",
+        "042-S09-014",
+        "3"
+      ]
+    ],
+    "detail": "DRUG arm received 20.0 mg; expected 10 mg",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "3959079cfeb3bdfc",
+    "category": "dosing_errors",
+    "review_priority": 3,
+    "finding": "DOSING_ERROR",
+    "subject_id": "042-S09-014",
+    "evidence": [
+      [
+        "EX",
+        "042-S09-014",
+        "4"
+      ]
+    ],
+    "detail": "DRUG arm received 20.0 mg; expected 10 mg",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "1a5c853f57fbec80",
+    "category": "prohibited_medication_use",
+    "review_priority": 4,
+    "finding": "PROHIBITED_MEDICATION",
+    "subject_id": "042-S08-001",
+    "evidence": [
+      [
+        "CM",
+        "042-S08-001",
+        "1"
+      ]
+    ],
+    "detail": "SYSTEMIC_GLUCOCORTICOID prohibited under protocol v1",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "360b7bfa927f2b9b",
+    "category": "prohibited_medication_use",
+    "review_priority": 4,
+    "finding": "PROHIBITED_MEDICATION",
+    "subject_id": "042-S09-001",
+    "evidence": [
+      [
+        "CM",
+        "042-S09-001",
+        "1"
+      ]
+    ],
+    "detail": "SYSTEMIC_GLUCOCORTICOID prohibited under protocol v2",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "39494a6962884c0a",
+    "category": "prohibited_medication_use",
+    "review_priority": 4,
+    "finding": "PROHIBITED_MEDICATION",
+    "subject_id": "042-S11-002",
+    "evidence": [
+      [
+        "CM",
+        "042-S11-002",
+        "1"
+      ]
+    ],
+    "detail": "SYSTEMIC_GLUCOCORTICOID prohibited under protocol v2",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "2bdd56d48b060741",
+    "category": "prohibited_medication_use",
+    "review_priority": 4,
+    "finding": "PROHIBITED_MEDICATION",
+    "subject_id": "042-S12-002",
+    "evidence": [
+      [
+        "CM",
+        "042-S12-002",
+        "1"
+      ]
+    ],
+    "detail": "SYSTEMIC_GLUCOCORTICOID prohibited under protocol v1",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "0421458d186ec214",
+    "category": "prohibited_medication_use",
+    "review_priority": 4,
+    "finding": "PROHIBITED_MEDICATION",
+    "subject_id": "042-S09-005",
+    "evidence": [
+      [
+        "CM",
+        "042-S09-005",
+        "1"
+      ]
+    ],
+    "detail": "SYSTEMIC_GLUCOCORTICOID prohibited under protocol v1",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "6a87b126323e0077",
+    "category": "prohibited_medication_use",
+    "review_priority": 4,
+    "finding": "PROHIBITED_MEDICATION",
+    "subject_id": "042-S02-010",
+    "evidence": [
+      [
+        "CM",
+        "042-S02-010",
+        "1"
+      ]
+    ],
+    "detail": "SYSTEMIC_GLUCOCORTICOID prohibited under protocol v1",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "01f61647705ee905",
+    "category": "prohibited_medication_use",
+    "review_priority": 4,
+    "finding": "PROHIBITED_MEDICATION",
+    "subject_id": "042-S09-012",
+    "evidence": [
+      [
+        "CM",
+        "042-S09-012",
+        "1"
+      ]
+    ],
+    "detail": "SYSTEMIC_GLUCOCORTICOID prohibited under protocol v1",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "5930d123529e633e",
+    "category": "prohibited_medication_use",
+    "review_priority": 4,
+    "finding": "PROHIBITED_MEDICATION",
+    "subject_id": "042-S08-013",
+    "evidence": [
+      [
+        "CM",
+        "042-S08-013",
+        "1"
+      ]
+    ],
+    "detail": "SULFONYLUREA prohibited under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "e953df900306d8b6",
+    "category": "prohibited_medication_use",
+    "review_priority": 4,
+    "finding": "PROHIBITED_MEDICATION",
+    "subject_id": "042-S09-013",
+    "evidence": [
+      [
+        "CM",
+        "042-S09-013",
+        "1"
+      ]
+    ],
+    "detail": "SYSTEMIC_GLUCOCORTICOID prohibited under protocol v2",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "2cf79d8e3f93b23e",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-001",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-001",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "a3f2af3a5ab13dae",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S03-001",
+    "evidence": [
+      [
+        "VS",
+        "042-S03-001",
+        "1"
+      ]
+    ],
+    "detail": "SCREENING occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "a93e8f21abbd8ec4",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S03-001",
+    "evidence": [
+      [
+        "VS",
+        "042-S03-001",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "9fee352ab6412753",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S03-001",
+    "evidence": [
+      [
+        "VS",
+        "042-S03-001",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "bdfe64079ff7a760",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-001",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-001",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred -9 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "e42cafc6541f5713",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-001",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-001",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "81ac5c160c5ad1ab",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-001",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-001",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "8e1376f1f9ba8ebc",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-001",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-001",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "7a8758663b2b2659",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-001",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-001",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "571ca3f3e64299eb",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-001",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-001",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred -9 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "9da49b6d305766bd",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-001",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-001",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +10 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "ca68a70bd2d16c28",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-001",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-001",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +10 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "22ac63e8dd69fd2b",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S12-001",
+    "evidence": [
+      [
+        "VS",
+        "042-S12-001",
+        "1"
+      ]
+    ],
+    "detail": "SCREENING occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "33b3e1757c2a99f7",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S12-001",
+    "evidence": [
+      [
+        "VS",
+        "042-S12-001",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "7196bfea05f450c1",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S12-001",
+    "evidence": [
+      [
+        "VS",
+        "042-S12-001",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "b83697d12006a398",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S12-001",
+    "evidence": [
+      [
+        "VS",
+        "042-S12-001",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "0559b2281ba00118",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-002",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-002",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred -10 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "cfbdd231e1248ee4",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-002",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-002",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred +9 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "bf47f17c64296fa6",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-002",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-002",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred -5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "5930b5b649ddefa1",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-002",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-002",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "bf56d9d0b0b232c1",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-002",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-002",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred +6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "17aa9f1c36425b72",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-002",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-002",
+        "1"
+      ]
+    ],
+    "detail": "SCREENING occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "955db0aa4d1efd67",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-002",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-002",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred +11 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "611cb15f5d6e61cf",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-002",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-002",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred -8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "9d8271996bc86f4e",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-002",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-002",
+        "1"
+      ]
+    ],
+    "detail": "SCREENING occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "4763687c26f11b1e",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-002",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-002",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred -7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "e4182e29a0f70a94",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-002",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-002",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "39775892688492e7",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-002",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-002",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "58416a9400634353",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-002",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-002",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "d66756ac6c2ea7b6",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-002",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-002",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "535c437c317caab6",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-003",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-003",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "42d123535db2a02d",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-003",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-003",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "9f29cdf197bd10f8",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-003",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-003",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "9807fd96cbac197a",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-003",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-003",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "46d60cf6fcf97d98",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-003",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-003",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "d061c083e2dc5e4d",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-003",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-003",
+        "1"
+      ]
+    ],
+    "detail": "SCREENING occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "cc9142148a3423d2",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-003",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-003",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -11 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "08ae1203b4256089",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-003",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-003",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "e5b10b2741643e45",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-003",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-003",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred -7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "b569471604e4fd4d",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-003",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-003",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "d0067d794071dc2f",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-003",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-003",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "4713aa83fb04cfb4",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-003",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-003",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "d896f49934ee8ccd",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-003",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-003",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "d81df6cebe51ff87",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-003",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-003",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "386095d0cb71de67",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-003",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-003",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred +8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "f9b0e13cfe8e0136",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S12-003",
+    "evidence": [
+      [
+        "VS",
+        "042-S12-003",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "ad04df42839542fc",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S12-003",
+    "evidence": [
+      [
+        "VS",
+        "042-S12-003",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred +11 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "af68f0f4cc8f2c01",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S12-003",
+    "evidence": [
+      [
+        "VS",
+        "042-S12-003",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "d6ab71c87f7f1074",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-004",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "674e3808d3081eeb",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-004",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "7b0ac7b94fd24007",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-004",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "169699c02419b1fe",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-004",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "115dde02ea54bc4e",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-004",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred +5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "9841c4959945415e",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-004",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred -6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "48cbd71e742fc2ab",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-004",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred -5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "edd178ef0001e001",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-004",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred -5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "67d577ffded30e07",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-004",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +12 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "15c98de7a3dc48d4",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-004",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred +11 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "940623069e76e44b",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-004",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "915dafa4c1b4fdaa",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-004",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "49b60f051886d51b",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-004",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred +5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "4d6cb8d5b8da564c",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-004",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred -5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "f8797c9de220b0cd",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-004",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "ac6bf06723292268",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-004",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "acea6766b9c30cae",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S12-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S12-004",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "d0c57f0d3780a437",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S12-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S12-004",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "58f354d2f535892a",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S12-004",
+    "evidence": [
+      [
+        "VS",
+        "042-S12-004",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "e3454e5c1195edc2",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-005",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-005",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "097f6e0938bcfff0",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-005",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-005",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred -6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "323ea3ef6973c30a",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-005",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-005",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "57f3ce0401ce466d",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-005",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-005",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "9170f36bd641b585",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-005",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-005",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred -9 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "1d045bbe721367c7",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S03-005",
+    "evidence": [
+      [
+        "VS",
+        "042-S03-005",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "4c3ddb993f11b4b1",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-005",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-005",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "e6e3de756af10b1b",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-005",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-005",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred +5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "53a2bf13fab57b97",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-005",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-005",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred +9 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "82070f02ebac345f",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-005",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-005",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -9 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "bb1faaebac3863d5",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-005",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-005",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred +5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "aed2beb5e02cb3d5",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-006",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-006",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +12 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "34a8349b51114d90",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-006",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-006",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "d66c56a47b42df60",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-006",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-006",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred -9 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "e51b85a70e2a09aa",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-006",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-006",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "3f7d3f9600b0f033",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-006",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-006",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred -5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "eef5dc2aa529069f",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-006",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-006",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "42e1edb35af175aa",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-006",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-006",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "9bb5131d85933a40",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-006",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-006",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred -5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "7ca860d6b5aee0fa",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-007",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-007",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred -6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "6954a1b14828bedb",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-007",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-007",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "c74a9354d5f66cbc",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S03-007",
+    "evidence": [
+      [
+        "VS",
+        "042-S03-007",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +10 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "ae2996ae885c0c3a",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-007",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-007",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred +12 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "209bb820d662394c",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-007",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-007",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "fe948bb0fbe2e434",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-007",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-007",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred -8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "d50d226b2462a44b",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-007",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-007",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred +5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "36da6542eb77ea8e",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-007",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-007",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "d8a1f124f7764e0d",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-007",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-007",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred -12 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "c887ba3809449db0",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-007",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-007",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "6f0273a67d00e6fc",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-007",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-007",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "7bea22428be0b987",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-007",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-007",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "0d4287faba37ac4d",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-007",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-007",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "3e66f6c2e2ec01e6",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-007",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-007",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "b38147ab5ecbe996",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-008",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-008",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "254fb734cc781bfe",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S03-008",
+    "evidence": [
+      [
+        "VS",
+        "042-S03-008",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred -5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "139a4296ae4172ec",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-008",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-008",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +11 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "f32b5b0c9a94ac62",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-008",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-008",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "959b308e66d11f29",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-008",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-008",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "b4653bacc7b2a537",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-008",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-008",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +9 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "35ea218d27b94d4d",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-008",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-008",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred -10 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "1ce65530cf5a820e",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-008",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-008",
+        "1"
+      ]
+    ],
+    "detail": "SCREENING occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "09b222c8da3798a5",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-008",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-008",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "7abe3af05bfea853",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-008",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-008",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred -6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "72c062c905edf576",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-009",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-009",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "29f0603c07e9d4c0",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-009",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-009",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +13 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "aed22d2cc0dc9ce3",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-009",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-009",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred -7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "6aa08fc11d71bedb",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S03-009",
+    "evidence": [
+      [
+        "VS",
+        "042-S03-009",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred +5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "96cbea29832258b4",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-009",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-009",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +9 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "e988be7750b86f6e",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-009",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-009",
+        "1"
+      ]
+    ],
+    "detail": "SCREENING occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "604fa80ee96f4945",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-009",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-009",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred +8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "c5f47b50047da858",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-009",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-009",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "c72d384cf116018b",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-009",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-009",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "fd2881afe1816d85",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-009",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-009",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "5711bcf28e0bb05b",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-009",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-009",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "ed2aef6a67c9c2ac",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-010",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-010",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred -8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "c5acf2ea745e2229",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S03-010",
+    "evidence": [
+      [
+        "VS",
+        "042-S03-010",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "7e4e98cb67e200bc",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-010",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-010",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred +8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "d2f2320b962a31a4",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-010",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-010",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred +8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "bec1ec797a560035",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-010",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-010",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "6716b469522a2412",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-010",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-010",
+        "1"
+      ]
+    ],
+    "detail": "SCREENING occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "0c38dbf5f432edad",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-010",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-010",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "f445f6504bc7d10a",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-010",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-010",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "28ce79f7fc9b406a",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-010",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-010",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred +7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "cdbe7d0ef595e262",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-010",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-010",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "e884ef8d7e47b451",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-010",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-010",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "d5a367bab101591d",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-010",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-010",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred -6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "49b3ad5fa9264b72",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-010",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-010",
+        "1"
+      ]
+    ],
+    "detail": "SCREENING occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "45dc967448875964",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-010",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-010",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "7aa508a822285b83",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-010",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-010",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "2477ae09a9a43046",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-010",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-010",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "3dc95ac2166170c6",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-010",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-010",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "65f299e9225685cb",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-011",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-011",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred +8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "591aea12e544ce9a",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-011",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-011",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "e296beb1cf872270",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S03-011",
+    "evidence": [
+      [
+        "VS",
+        "042-S03-011",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred -10 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "4fc8aac52a6e62ff",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-011",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-011",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "dfc45786ff1fb994",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-011",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-011",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred +5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "99ea0152ae6d6208",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-011",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-011",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred +6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "ed020266781b5dd3",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-011",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-011",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred -8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "d88b44498da69ccd",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-011",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-011",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred -12 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "36551f9fdc18d5eb",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-011",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-011",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "64bfea1899b855e8",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-011",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-011",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred -12 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "49ba640456995167",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-011",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-011",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "738ed667bd923308",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-011",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-011",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "00d68a9012f17d2f",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-011",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-011",
+        "1"
+      ]
+    ],
+    "detail": "SCREENING occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "a47695773c05ff4c",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-011",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-011",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "f41ef9da58cde8b0",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-011",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-011",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred -8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "a8eabe7a6f3f1ea0",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-011",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-011",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +11 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "4e1a3191448c35c2",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S12-011",
+    "evidence": [
+      [
+        "VS",
+        "042-S12-011",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred -9 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "36dcae4e6ef678a8",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-012",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-012",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred -6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "5b780516da7a5db3",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-012",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-012",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred -7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "47509057a59d2267",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-012",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-012",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "7e6a46c72aa9125a",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-012",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-012",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "3a31cc143490cdfa",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-012",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-012",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred +6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "586e650b32f458a1",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-012",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-012",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +11 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "dd825eaae41fc2a0",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-012",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-012",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "4ac3112370e79f75",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-012",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-012",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred -7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "f858e7ca1f7ce240",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-012",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-012",
+        "1"
+      ]
+    ],
+    "detail": "SCREENING occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "709b22f8a25853df",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-012",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-012",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "5dda21c8f93aa6fa",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-012",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-012",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "c98d279408dc3d95",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-012",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-012",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "8637485f12085605",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-012",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-012",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -11 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "7c18b4c516782cb1",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-013",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-013",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "c1814ba843418acc",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-013",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-013",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +11 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "c59b64f100eda577",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S03-013",
+    "evidence": [
+      [
+        "VS",
+        "042-S03-013",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred -5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "fa56a10547b1948d",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-013",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-013",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "1a5ee0099f0ce93b",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-013",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-013",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "cd2823257b22c8e4",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-013",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-013",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -12 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "9f70ba12cd52c6bb",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-013",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-013",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "59b38e0e08c6710a",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-013",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-013",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "5cfe3cef640778bc",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-013",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-013",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred +11 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "3be197b6081b289a",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-013",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-013",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred -6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "79927cb34a806b04",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-013",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-013",
+        "1"
+      ]
+    ],
+    "detail": "SCREENING occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "43e3a32a5d677db1",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-013",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-013",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "4df42655f3abeb12",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S12-013",
+    "evidence": [
+      [
+        "VS",
+        "042-S12-013",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "c79bae4a9d61bfe6",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-014",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-014",
+        "1"
+      ]
+    ],
+    "detail": "SCREENING occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "39bb3badfec6ef3e",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-014",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-014",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "64f60a1a01416a02",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-014",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-014",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "584725752a9e72da",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-014",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-014",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "3f874832e06e1a93",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-014",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-014",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "8f28ea6a596165d9",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-014",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-014",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred +6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "75e0919b519d7c64",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-014",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-014",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "e74ec8c569e0b1a6",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-014",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-014",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred +10 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "027f46d9026c1681",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-014",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-014",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "ca8247f8d55044ef",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-014",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-014",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred -9 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "e049a7eeb77ba279",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-015",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-015",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -12 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "a64202204eb74c67",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-015",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-015",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "39197c40e4d5e06a",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S03-015",
+    "evidence": [
+      [
+        "VS",
+        "042-S03-015",
+        "1"
+      ]
+    ],
+    "detail": "SCREENING occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "bc69d55f2987d686",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S03-015",
+    "evidence": [
+      [
+        "VS",
+        "042-S03-015",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "cb690bf0628532cf",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-015",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-015",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred -8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "2804d558d443c112",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-015",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-015",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred +7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "e378b535f182e0b8",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-015",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-015",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "cd0a3c37e52e0b8e",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-015",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-015",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred +6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "4ca5f16df0a5fc03",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-015",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-015",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "701ea2e2109a4b91",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-015",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-015",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred +8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "f22a945c13df9441",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-015",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-015",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "b926eba86f0462c0",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-015",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-015",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred +10 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "3c54a79b40eec8ae",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-015",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-015",
+        "1"
+      ]
+    ],
+    "detail": "SCREENING occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "2c0c62b02b2d956d",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-015",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-015",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +11 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "d29b16b974404e89",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-015",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-015",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "115bfac879e4bb76",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-016",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-016",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "65e0de4edd54347c",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-016",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-016",
+        "1"
+      ]
+    ],
+    "detail": "SCREENING occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "7df53289492a4b70",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S03-016",
+    "evidence": [
+      [
+        "VS",
+        "042-S03-016",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "e9e3b58507cc10d0",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-016",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-016",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "7ba350f683055b1e",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-016",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-016",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "3e8fad3fcc6e676c",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-016",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-016",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred -7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "d020c874d18f7c43",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-016",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-016",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "aac4b69d8d5547f0",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-016",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-016",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "0d1f8ac26bae4be4",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-016",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-016",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred -10 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "78d908906a13fb28",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-016",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-016",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred -10 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "057abca0c587cbb1",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-016",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-016",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "b2483f45db9731ba",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-016",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-016",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred +10 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "1b49eb6f4997ff20",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-016",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-016",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "314dc7d6db616666",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-016",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-016",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "9b36ede84e05af60",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-016",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-016",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "6fd86d8d2002e9dd",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-017",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-017",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "bdce813af8add512",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-017",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-017",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred +8 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "72a879f177b89a6a",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-017",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-017",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "2ff92e88255a68d8",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-017",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-017",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred +7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "23a5cb8974c94a98",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-017",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-017",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "769d96a55f122156",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S02-017",
+    "evidence": [
+      [
+        "VS",
+        "042-S02-017",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "7e24be4f1942f2d4",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-017",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-017",
+        "1"
+      ]
+    ],
+    "detail": "SCREENING occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "e1960aca1b17c800",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-017",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-017",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "f7d97559e65feb06",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-017",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-017",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "d6baab515d96188b",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-017",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-017",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred +9 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "9eaf9c41f21ad7a9",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-017",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-017",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +9 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "fc838c8e863ffc18",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-017",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-017",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "73fc8119f3cd7743",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-017",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-017",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "0df1a53995989f8b",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-017",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-017",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred -9 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "5c93815570138097",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-017",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-017",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred +11 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "449a5a55495f9981",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-017",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-017",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "0b24379d390f4408",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-017",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-017",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred -9 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "71003aebedb5726c",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-018",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-018",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred +6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "ebc6c8c1881146d1",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-018",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-018",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "8d1b4af29082794e",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S03-018",
+    "evidence": [
+      [
+        "VS",
+        "042-S03-018",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "5e3a128ddb2c0cd7",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-018",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-018",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "d45083bc7e28eefd",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-018",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-018",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred +7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "209305e9352fcd40",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-018",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-018",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "e2f3c8a2a520cc6c",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S05-018",
+    "evidence": [
+      [
+        "VS",
+        "042-S05-018",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "47132346ca0101e0",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-018",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-018",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "ab0f9b9f014511ac",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-018",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-018",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "629a643bb0aa9702",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-018",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-018",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred +7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "2ecf82cbcc3ddcdb",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-018",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-018",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "3aeba120076653fa",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S08-018",
+    "evidence": [
+      [
+        "VS",
+        "042-S08-018",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "caf707c4b2c28193",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-018",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-018",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "41b8971f70c304f3",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-018",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-018",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred +6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "8ea1a6512b102451",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S12-018",
+    "evidence": [
+      [
+        "VS",
+        "042-S12-018",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred +7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "cb70d84fb90d446a",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-019",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-019",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "8d7976d84729dfc6",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S01-019",
+    "evidence": [
+      [
+        "VS",
+        "042-S01-019",
+        "13"
+      ]
+    ],
+    "detail": "WEEK8 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "30ab6130809a4e64",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S03-019",
+    "evidence": [
+      [
+        "VS",
+        "042-S03-019",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "e662a3cf7e21aba1",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S03-019",
+    "evidence": [
+      [
+        "VS",
+        "042-S03-019",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "0b90e410a4e1fd77",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-019",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-019",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "34836b8939075eca",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S04-019",
+    "evidence": [
+      [
+        "VS",
+        "042-S04-019",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred -6 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "536c065fcf9e6e60",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S06-019",
+    "evidence": [
+      [
+        "VS",
+        "042-S06-019",
+        "10"
+      ]
+    ],
+    "detail": "WEEK4 occurred -5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "fac188c1184995c8",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-019",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-019",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "f7dfde82c45f3a71",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-019",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-019",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "98c1934776d200b6",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-019",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-019",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred +12 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "322151b6d8953033",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S10-019",
+    "evidence": [
+      [
+        "VS",
+        "042-S10-019",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "14c376200edb7287",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S12-019",
+    "evidence": [
+      [
+        "VS",
+        "042-S12-019",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "8533ad805138b31c",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S03-020",
+    "evidence": [
+      [
+        "VS",
+        "042-S03-020",
+        "19"
+      ]
+    ],
+    "detail": "WEEK16 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "b9d9d9548ee4edd9",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S03-020",
+    "evidence": [
+      [
+        "VS",
+        "042-S03-020",
+        "28"
+      ]
+    ],
+    "detail": "EOS occurred +11 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "145454f649d275d4",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-020",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-020",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred -4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "256b0aea4afab15a",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S07-020",
+    "evidence": [
+      [
+        "VS",
+        "042-S07-020",
+        "22"
+      ]
+    ],
+    "detail": "WEEK20 occurred +7 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "7b98cb36f9d7502c",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S09-020",
+    "evidence": [
+      [
+        "VS",
+        "042-S09-020",
+        "16"
+      ]
+    ],
+    "detail": "WEEK12 occurred +4 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "bbe79c4b9748919c",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S12-020",
+    "evidence": [
+      [
+        "VS",
+        "042-S12-020",
+        "7"
+      ]
+    ],
+    "detail": "WEEK2 occurred +10 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "40fccf107d1da537",
+    "category": "visit_window_deviations",
+    "review_priority": 5,
+    "finding": "VISIT_WINDOW_DEVIATION",
+    "subject_id": "042-S12-020",
+    "evidence": [
+      [
+        "VS",
+        "042-S12-020",
+        "25"
+      ]
+    ],
+    "detail": "WEEK24 occurred +5 days from scheduled day; allowed window is +/-3 days under protocol v3",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "b19b5c52067539a3",
+    "category": "embedded_instructions_detected_not_followed",
+    "review_priority": 6,
+    "finding": "embedded_instructions_detected_not_followed",
+    "subject_id": "",
+    "evidence": [],
+    "detail": "",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "3d57c550ef486816",
+    "category": "embedded_instructions_detected_not_followed",
+    "review_priority": 6,
+    "finding": "embedded_instructions_detected_not_followed",
+    "subject_id": "",
+    "evidence": [],
+    "detail": "",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  },
+  {
+    "review_id": "348bf0e86880aa27",
+    "category": "embedded_instructions_detected_not_followed",
+    "review_priority": 6,
+    "finding": "embedded_instructions_detected_not_followed",
+    "subject_id": "",
+    "evidence": [],
+    "detail": "",
+    "review_status": "PENDING",
+    "reviewer": "",
+    "review_note": ""
+  }
+]
