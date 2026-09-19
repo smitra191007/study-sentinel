@@ -86,7 +86,7 @@ class ReviewCrew:
         through: atlas_run(data_dir, cut=cut).
         """
         data_dir = getattr(self.atlas, "data_dir", "hackathon-data")
-        _, raw_findings = atlas_run(data_dir)
+        _, raw_findings = atlas_run(data_dir,cut=cut)
 
         findings: list[Finding] = []
 
