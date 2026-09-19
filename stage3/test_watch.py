@@ -18,15 +18,47 @@ crew = ReviewCrew(
 watch = StudyWatch(
     data_dir="hackathon-data",
     crew=crew,
-    audit_path="stage3_test_trace.jsonl",
+    audit_path="stage3_full_trace.jsonl",
 )
 
 report = watch.run_period(
-    cuts=[1],
+    cuts=range(1, 13),
 )
 
+print()
+print("========== STAGE 3 FULL TEST ==========")
 print("Cuts processed:", report.cuts_processed)
-print("Decisions:", [d.decision_id for d in report.decisions])
+print("Decisions:", len(report.decisions))
 print("Signals:", len(report.signals))
-print("First finding:")
-print(report.signals[0])
+print("Adversarial events:", len(report.adversarial_events))
+print("Open items:", len(report.open_items))
+print("Budget:", report.budget_used, "/", report.budget_total)
+print("Narrative enabled:", report.narrative_enabled)
+
+print()
+print("========== IMPORTANT ADVERSARIAL EVENTS ==========")
+
+important = {
+    "SITE_SCALE_SHIFT",
+    "TAMPERED_DOCUMENT_INSTRUCTION",
+    "PROTOCOL_AMENDMENT",
+    "LAB_UNIT_ANOMALY",
+    "UNRELIABLE_LAB_SITE",
+}
+
+for event in report.adversarial_events:
+    event_type = event.get("event_type", event.get("type"))
+
+    if event_type in important:
+        print(
+            event.get("cut"),
+            "|",
+            event_type,
+            "|",
+            event.get("site"),
+            "|",
+            event.get("action"),
+        )
+
+print()
+print("========== END TEST ==========")
