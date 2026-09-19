@@ -19,11 +19,53 @@ from stage2.trace_logger import TraceLogger
 
 
 def draft_query_text(finding: Finding) -> str:
-    """
-    TODO (Person A): replace with real per-finding-type query wording.
-    Keep it short, specific, and cite the record.
-    """
-    return f"Please confirm/correct: {finding.detail} (refs: {', '.join(finding.record_refs)})"
+    refs = ", ".join(finding.record_refs)
+
+    if finding.finding_type == "visit_window_deviations":
+        return (
+            f"Visit for subject {finding.subject_id} occurred outside "
+            f"the protocol window. {finding.detail} "
+            f"Please confirm the actual visit date and protocol deviation. "
+            f"(refs: {refs})"
+        )
+
+    elif finding.finding_type == "prohibited_medication_use":
+        return (
+            f"Subject {finding.subject_id} has a concomitant medication "
+            f"flagged as prohibited under the applicable protocol. "
+            f"{finding.detail} Please confirm or correct the medication "
+            f"information. (refs: {refs})"
+        )
+
+    elif finding.finding_type == "seriousness_miscoded":
+        return (
+            f"AE record for subject {finding.subject_id} may be miscoded "
+            f"as non-serious. {finding.detail} "
+            f"Please review and confirm the correct seriousness classification. "
+            f"(refs: {refs})"
+        )
+
+    elif finding.finding_type == "dosing_errors":
+        return (
+            f"Exposure record for subject {finding.subject_id} contains "
+            f"a possible dosing discrepancy. {finding.detail} "
+            f"Please confirm the administered dose and treatment arm. "
+            f"(refs: {refs})"
+        )
+
+    elif finding.finding_type == "hys_law_candidates":
+        return (
+            f"Subject {finding.subject_id} has laboratory findings that "
+            f"meet a potential Hy's Law signal. {finding.detail} "
+            f"Please review the relevant laboratory results and confirm "
+            f"the clinical interpretation. (refs: {refs})"
+        )
+
+    else:
+        return (
+            f"Please review finding for subject {finding.subject_id}: "
+            f"{finding.detail} (refs: {refs})"
+        )
 
 
 def process(findings: list[Finding], memory: CrossCycleMemory, logger: TraceLogger) -> list[Finding]:
