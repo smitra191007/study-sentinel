@@ -619,3 +619,15 @@ def main():
 
 if __name__ == "__main__":
     main()
+class Atlas:
+    """
+    Wrapper class to satisfy Stage 2 imports while utilizing Stage 1 engine functions.
+    """
+    def __init__(self, data_dir: str = "hackathon-data"):
+        self.data_dir = data_dir
+
+    def run(self, cut: int | None = None):
+        return run(self.data_dir, cut=cut)
+
+    def answer(self, question: str, cut: int | None = None):
+        return answer(self.data_dir, question, cut=cut)

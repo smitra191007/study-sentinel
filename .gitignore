@@ -218,4 +218,5 @@ __marimo__/
 .streamlit/secrets.toml
 
 # Local hackathon dataset
-hackathon-data/
+hackathon-data/stage2_memory.json
+stage2_trace.jsonl

@@ -1,17 +1,23 @@
 """
 stage2/crew.py
 
-The 6-node orchestration pipeline:
-  detect -> medical review -> data manager -> compliance -> human gate -> execute
+Matches the exact class shape the problem doc specifies:
 
-Note the order per the spec: data_manager runs BEFORE compliance. That's
-intentional — data quality issues get queried first, and compliance checks
-against protocol version run after, so a corrected value can still be
-checked against the right protocol.
+    class ReviewCrew:
+        def __init__(self, hub_url, gateway_url, team_key, atlas: Atlas): ...
+        def run_cycle(self, cut: int, protocol_version: int) -> ReviewReport: ...
+
+Six nodes, in order: detect -> medical_review -> data_manager -> compliance
+-> human_gate -> execute. (data_manager runs before compliance, per the
+original scaffold design — data issues get queried first, compliance runs
+after so a corrected value is still checked against the right protocol.)
 """
 
 from __future__ import annotations
 
+from dataclasses import dataclass, field
+
+from stage2.api_client import ApiClient
 from stage2.memory import CrossCycleMemory
 from stage2.nodes import compliance, data_manager, human_gate, medical_review
 from stage2.schema import Finding
@@ -21,82 +27,108 @@ from stage2.trace_logger import TraceLogger
 # from stage1.atlas import Atlas
 
 
-def detect(data_dir: str) -> list[Finding]:
-    """
-    Stage 1 hookup. Replace this placeholder with a real call into
-    stage1.atlas.Atlas(...).build() + query({"type": "Finding", ...}), then
-    map each raw Stage 1 finding into a stage2.schema.Finding.
-
-    TODO (either of you — whoever gets to it first):
-        atlas = Atlas(data_dir=data_dir).build()
-        raw = atlas.query({"type": "Finding", "filters": {}})["result"]
-        return [
-            Finding(
-                finding_id=make_finding_id(r["subject_id"], r["finding_type"], ...),
-                subject_id=r["subject_id"],
-                site_id=...,
-                finding_type=r["finding_type"],
-                detail=r["detail"],
-                record_refs=[...],
-            )
-            for r in raw
-        ]
-    """
-    return []
+@dataclass
+class ReviewReport:
+    cut: int
+    protocol_version: int
+    findings_count: int
+    escalations_count: int
+    queries_count: int
+    findings: list[Finding] = field(default_factory=list)
 
 
-def execute(findings: list[Finding], logger: TraceLogger) -> list[Finding]:
-    """
-    Final node: anything not queried, escalated, or resolved by this point
-    is logged as passed-through with no action needed this cycle.
-    """
-    for f in findings:
-        if f.status == "open":
-            logger.log(
-                node="execute",
-                finding_id=f.finding_id,
-                decision="no_action",
-                rationale="not queried or escalated this cycle",
-                evidence=f.record_refs,
-            )
-        f.node_trail.append("execute")
-    return findings
+class ReviewCrew:
+    def __init__(self, hub_url: str, gateway_url: str, team_key: str, atlas) -> None:
+        self.atlas = atlas
+        self.client = ApiClient(hub_url=hub_url, gateway_url=gateway_url, team_key=team_key)
+        self.memory = CrossCycleMemory(path="stage2_memory.json")
+        self.logger = TraceLogger(path="stage2_trace.jsonl")
 
+    def detect(self, cut: int) -> list[Finding]:
+        """
+        Stage 1 hookup. TODO: replace with your real call, e.g.:
 
-def run_pipeline(
-    data_dir: str,
-    protocol_versions: list | None = None,
-    memory_path: str = "stage2_memory.json",
-    trace_path: str = "stage2_trace.jsonl",
-) -> list[Finding]:
-    memory = CrossCycleMemory(path=memory_path)
-    logger = TraceLogger(path=trace_path)
-    cycle = memory.start_new_cycle()
-    logger.log("crew", "-", "cycle_start", f"cycle {cycle} beginning", [])
+            raw_findings = self.atlas.detect(cut=cut)  # or whatever Stage 1's
+                                                         # real method is called
+            return [Finding.from_raw(r) for r in raw_findings]
 
-    findings = detect(data_dir)
-    findings = medical_review.review(findings, logger)
-    findings = data_manager.process(findings, memory, logger)
-    findings = compliance.check(findings, protocol_versions or [], logger)
-    findings = human_gate.process(findings, memory, logger)
-    findings = execute(findings, logger)
+        Must return Finding objects built via Finding.from_raw(raw_dict) so
+        the code/usubjid/evidence field names match Stage 1's actual output.
+        """
+        return []
 
-    logger.log("crew", "-", "cycle_end", f"cycle {cycle} complete, {len(findings)} findings processed", [])
-    return findings
+    def execute(self, findings: list[Finding]) -> list[Finding]:
+        """Final node: anything untouched this cycle is logged as no-action."""
+        for f in findings:
+            if f.status == "open":
+                self.logger.log(
+                    node="execute",
+                    finding_id=f.finding_id,
+                    decision="no_action",
+                    rationale="not queried or escalated this cycle",
+                    evidence=[e.to_dict() for e in f.evidence],
+                )
+            f.node_trail.append("execute")
+        return findings
+
+    def run_cycle(self, cut: int, protocol_version: int) -> ReviewReport:
+        cycle = self.memory.start_new_cycle()
+        self.logger.log("crew", "-", "cycle_start", f"cut={cut} cycle={cycle} protocol_version={protocol_version}")
+
+        findings = self.detect(cut)
+        self.logger.log_summary("detect", f"{len(findings)} findings under protocol v{protocol_version}")
+
+        findings = medical_review.review(findings, self.logger)
+        findings = data_manager.process(findings, self.memory, self.client, cut, self.logger)
+        findings = compliance.check(findings, protocol_version, self.logger)
+        findings = human_gate.process(findings, self.memory, self.client, self.logger)
+        findings = self.execute(findings)
+
+        escalations_count = sum(1 for f in findings if f.status in ("resolved", "escalated"))
+        queries_count = sum(1 for f in findings if f.status == "queried")
+
+        report = ReviewReport(
+            cut=cut,
+            protocol_version=protocol_version,
+            findings_count=len(findings),
+            escalations_count=escalations_count,
+            queries_count=queries_count,
+            findings=findings,
+        )
+
+        self.logger.log_summary(
+            "execute",
+            f"cycle complete: {report.findings_count} findings, "
+            f"{report.escalations_count} escalations, {report.queries_count} queries",
+        )
+        return report
 
 
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(description="Run the Stage 2 review crew pipeline.")
-    parser.add_argument("--data-dir", default="hackathon-data")
-    parser.add_argument("--memory-path", default="stage2_memory.json")
-    parser.add_argument("--trace-path", default="stage2_trace.jsonl")
+    parser = argparse.ArgumentParser(description="Run one Stage 2 review cycle.")
+    parser.add_argument("--hub-url", required=True)
+    parser.add_argument("--gateway-url", required=True)
+    parser.add_argument("--team-key", required=True)
+    parser.add_argument("--cut", type=int, required=True)
+    parser.add_argument("--protocol-version", type=int, required=True)
     args = parser.parse_args()
 
-    results = run_pipeline(
-        data_dir=args.data_dir,
-        memory_path=args.memory_path,
-        trace_path=args.trace_path,
+    # TODO: replace with real Atlas construction once Stage 1 is wired in.
+    # from stage1.atlas import Atlas
+    # atlas = Atlas(data_dir="hackathon-data").build()
+    atlas = None
+
+    crew = ReviewCrew(
+        hub_url=args.hub_url,
+        gateway_url=args.gateway_url,
+        team_key=args.team_key,
+        atlas=atlas,
     )
-    print(f"Processed {len(results)} findings. See {args.trace_path} for the full trace.")
+    report = crew.run_cycle(cut=args.cut, protocol_version=args.protocol_version)
+    print(
+        f"Cycle complete: {report.findings_count} findings, "
+        f"{report.escalations_count} escalations, {report.queries_count} queries. "
+        f"See stage2_trace.jsonl for the full trace."
+    )

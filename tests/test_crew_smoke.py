@@ -1,7 +1,8 @@
 """
-Smoke test: proves the pipeline structure works end-to-end BEFORE any real
-node logic exists. Run this first, on both machines, to confirm the
-scaffold itself is sound. Mocks the API client so it needs no network.
+Smoke test built directly from the problem doc's worked example:
+  - the SAE_MISCODED / AESHOSP=Y finding
+  - APPROVED, REJECTED, and CLARIFY escalation responses
+  - the "re-run the same cut -> zero new queries/escalations" memory rule
 
 Run with:  pytest tests/test_crew_smoke.py -v
 """
@@ -12,67 +13,114 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from stage2 import crew
-from stage2.schema import Finding
+from stage2.crew import ReviewCrew
+from stage2.schema import EscalationResponse, Finding, QueryResponse
 
 
-def _fake_findings() -> list[Finding]:
-    return [
-        Finding(
-            finding_id="SUBJ-001:adverse_event:AE-0002",
-            subject_id="SUBJ-001",
-            site_id="S01",
-            finding_type="adverse_event",
-            detail="AE reported without hospitalization flag reviewed",
-            record_refs=["adverse_events:AE-0002"],
+# --- The exact raw finding from the problem doc's worked example ---------
+SAE_MISCODED_RAW = {
+    "code": "SAE_MISCODED",
+    "usubjid": "042-S02-004",
+    "site": "S02",
+    "severity": "CRITICAL",
+    "rationale": "'Cellulitis' has AESHOSP=Y but AESER=N",
+    "evidence": [{"domain": "AE", "usubjid": "042-S02-004", "seq": 1}],
+}
+
+AE_BEFORE_DOSE_RAW = {
+    "code": "AE_BEFORE_FIRST_DOSE",
+    "usubjid": "042-S11-005",
+    "site": "S11",
+    "severity": "MINOR",
+    "rationale": "AE 'Fatigue' starts 2026-01-08, before first dose 2026-01-13.",
+    "evidence": [{"domain": "AE", "usubjid": "042-S11-005", "seq": 1}],
+}
+
+
+def _make_crew(tmp_path) -> ReviewCrew:
+    crew = ReviewCrew(
+        hub_url="http://fake-hub",
+        gateway_url="http://fake-gateway",
+        team_key="fake-key",
+        atlas=None,
+    )
+    crew.memory.path = tmp_path / "memory.json"
+    crew.logger.path = tmp_path / "trace.jsonl"
+    crew.logger.path.write_text("", encoding="utf-8")
+    return crew
+
+
+def test_sae_miscoded_escalates_and_gets_approved(tmp_path):
+    crew = _make_crew(tmp_path)
+    fake_finding = Finding.from_raw(SAE_MISCODED_RAW)
+
+    with patch.object(crew, "detect", return_value=[fake_finding]), \
+         patch(
+             "stage2.nodes.human_gate.ApiClient.post_escalation",
+             return_value=EscalationResponse(
+                 id="E-0007", decision="APPROVED",
+                 reason="Serious adverse event confirmed; expedited report within 24 h.",
+             ),
+         ):
+        report = crew.run_cycle(cut=6, protocol_version=2)
+
+    assert report.escalations_count == 1
+    resolved = [f for f in report.findings if f.status == "resolved"]
+    assert len(resolved) == 1
+    assert resolved[0].code == "SAE_MISCODED"
+
+
+def test_clarify_is_auto_answered_not_treated_as_rejection(tmp_path):
+    crew = _make_crew(tmp_path)
+    fake_finding = Finding.from_raw(SAE_MISCODED_RAW)
+
+    responses = [
+        EscalationResponse(
+            id="E-0007", decision="CLARIFY",
+            reason="What was the ALT at screening, and is there a concomitant hepatotoxic medication?",
         ),
-        Finding(
-            finding_id="SUBJ-004:visit_window:V-0006",
-            subject_id="SUBJ-004",
-            site_id="S03",
-            finding_type="visit_window",
-            detail="Visit occurred outside protocol window",
-            record_refs=["visits:V-0006"],
-        ),
+        EscalationResponse(id="E-0007", decision="APPROVED", reason="Clarification accepted."),
     ]
 
+    with patch.object(crew, "detect", return_value=[fake_finding]), \
+         patch("stage2.nodes.human_gate.ApiClient.post_escalation", side_effect=[responses[0]]), \
+         patch(
+             "stage2.nodes.human_gate.ApiClient.resubmit_escalation_with_clarification",
+             return_value=responses[1],
+         ):
+        report = crew.run_cycle(cut=6, protocol_version=2)
 
-def test_pipeline_runs_end_to_end(tmp_path):
-    memory_path = str(tmp_path / "memory.json")
-    trace_path = str(tmp_path / "trace.jsonl")
-
-    with patch.object(crew, "detect", return_value=_fake_findings()), \
-         patch("stage2.nodes.data_manager.api_client.post_query", return_value={"ok": True}), \
-         patch("stage2.nodes.human_gate.api_client.post_escalation", return_value={"decision": "APPROVED"}):
-
-        results = crew.run_pipeline(
-            data_dir="unused",
-            memory_path=memory_path,
-            trace_path=trace_path,
-        )
-
-    assert len(results) == 2
-    for f in results:
-        assert "medical_review" in f.node_trail
-        assert "compliance" in f.node_trail
-        assert "data_manager" in f.node_trail
-        assert "human_gate" in f.node_trail
-        assert "execute" in f.node_trail
-
-    assert Path(trace_path).exists()
-    assert Path(trace_path).read_text().strip() != ""
+    resolved = [f for f in report.findings if f.status == "resolved"]
+    assert len(resolved) == 1  # CLARIFY -> auto-answered -> resolved, not rejected
 
 
-def test_duplicate_query_is_skipped_on_second_cycle(tmp_path):
-    memory_path = str(tmp_path / "memory.json")
-    trace_path = str(tmp_path / "trace.jsonl")
+def test_rejected_escalation_is_never_repeated(tmp_path):
+    crew = _make_crew(tmp_path)
+    fake_finding = Finding.from_raw(SAE_MISCODED_RAW)
 
-    with patch.object(crew, "detect", return_value=_fake_findings()), \
-         patch("stage2.nodes.data_manager.api_client.post_query", return_value={"ok": True}) as mock_post, \
-         patch("stage2.nodes.human_gate.api_client.post_escalation", return_value={"decision": "APPROVED"}):
+    with patch.object(crew, "detect", return_value=[fake_finding]), \
+         patch(
+             "stage2.nodes.human_gate.ApiClient.post_escalation",
+             return_value=EscalationResponse(id="E-0007", decision="REJECTED", reason="Not significant."),
+         ) as mock_escalate:
+        crew.run_cycle(cut=6, protocol_version=2)
+        # Second cycle, same finding, same cut — must NOT escalate again.
+        crew.run_cycle(cut=6, protocol_version=2)
 
-        crew.run_pipeline(data_dir="unused", memory_path=memory_path, trace_path=trace_path)
-        crew.run_pipeline(data_dir="unused", memory_path=memory_path, trace_path=trace_path)
+    assert mock_escalate.call_count == 1
 
-    # Two findings, queried once each across two cycles -> exactly 2 calls, not 4.
-    assert mock_post.call_count == 2
+
+def test_query_is_never_raised_twice_on_same_record(tmp_path):
+    crew = _make_crew(tmp_path)
+    fake_finding = Finding.from_raw(AE_BEFORE_DOSE_RAW)
+
+    with patch.object(crew, "detect", return_value=[fake_finding]), \
+         patch(
+             "stage2.nodes.data_manager.ApiClient.post_query",
+             return_value=QueryResponse(id="Q-0031", status="OPEN"),
+         ) as mock_query:
+        crew.run_cycle(cut=6, protocol_version=2)
+        crew.run_cycle(cut=6, protocol_version=2)
+
+    # Judges re-run the same cut and expect ZERO new queries the second time.
+    assert mock_query.call_count == 1

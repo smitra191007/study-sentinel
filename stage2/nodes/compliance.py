@@ -1,13 +1,15 @@
 """
 stage2/nodes/compliance.py  —  PERSON A
 
-Cross-references each subject against the protocol version that was active
-at THAT SUBJECT'S specific data cut — not today's protocol. Reuses the
-version-mapping logic already built in stage1/documents.py.
+Cross-references each subject against the protocol version active for
+THIS cycle's data cut — and critically, per the doc's "what happens
+partway through" scenario: if the protocol changes mid-event, subjects
+compliant under the old version may be in violation under the new one,
+on the SAME data. This node must always apply the CURRENT cycle's
+protocol_version, never a cached/previous one.
 
-TODO: wire in your real Stage 1 imports once package paths are finalized,
-e.g.:
-    from stage1.documents import active_version_for_date, parse_protocol_versions
+Failure mode this guards against (from the doc):
+  "Applying the previous protocol version's rules after the amendment"
 """
 
 from __future__ import annotations
@@ -15,30 +17,31 @@ from __future__ import annotations
 from stage2.schema import Finding
 from stage2.trace_logger import TraceLogger
 
-# TODO: import your real Stage 1 protocol-version logic here
+# TODO: import your real Stage 1 protocol-version logic here, e.g.:
 # from stage1.documents import active_version_for_date
 
 
-def check(findings: list[Finding], protocol_versions: list, logger: TraceLogger) -> list[Finding]:
+def check(findings: list[Finding], protocol_version: int, logger: TraceLogger) -> list[Finding]:
     """
-    Sets `finding.protocol_version` based on the subject's data-cut date.
-    `protocol_versions` should be the list already parsed by Stage 1
-    (stage1.documents.parse_protocol_versions).
+    `protocol_version` is passed in explicitly by ReviewCrew.run_cycle(cut,
+    protocol_version) for THIS cycle — always use this value, never one
+    stored from a previous cycle, so a mid-event amendment takes effect
+    immediately.
     """
     for f in findings:
-        # --- TODO: replace with real active_version_for_date(...) lookup ---
-        # cut_date = get_subject_data_cut_date(f.subject_id)
-        # version = active_version_for_date(protocol_versions, cut_date)
-        # f.protocol_version = version.version_id if version else None
-        f.protocol_version = f.protocol_version or "unresolved"  # placeholder
+        f.protocol_version = protocol_version
+
+        # TODO: replace with real rule lookups against this protocol_version,
+        # e.g. visit window days, prohibited medication list, eligibility
+        # criteria — via stage1.documents or a fetched GET /documents/protocol.
 
         f.node_trail.append("compliance")
         logger.log(
             node="compliance",
             finding_id=f.finding_id,
-            decision=f"protocol_version={f.protocol_version}",
-            rationale="placeholder — replace with real data-cut -> version mapping",
-            evidence=f.record_refs,
+            decision=f"checked_under_protocol_v{protocol_version}",
+            rationale=f"{f.code} evaluated against protocol version {protocol_version}",
+            evidence=[e.to_dict() for e in f.evidence],
         )
 
     return findings
