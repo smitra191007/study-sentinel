@@ -63,9 +63,14 @@ def _build_evidence(usubjid: str, raw_evidence, start_seq: int = 0) -> list[Evid
 
 
 class ReviewCrew:
-    def __init__(self, hub_url: str, gateway_url: str, team_key: str, atlas) -> None:
+    def __init__(self, hub_url: str, gateway_url: str, team_key: str, atlas, mock_api: bool = False) -> None:
         self.atlas = atlas
-        self.client = ApiClient(hub_url=hub_url, gateway_url=gateway_url, team_key=team_key)
+        self.client = ApiClient(
+            hub_url=hub_url,
+            gateway_url=gateway_url,
+            team_key=team_key,
+            mock_api=mock_api,
+        )
         self.memory = CrossCycleMemory(path="stage2_memory.json")
         self.logger = TraceLogger(path="stage2_trace.jsonl")
 
@@ -184,7 +189,18 @@ if __name__ == "__main__":
     parser.add_argument("--cut", type=int, required=True)
     parser.add_argument("--protocol-version", type=int, required=True)
     parser.add_argument("--data-dir", default="hackathon-data")
+    parser.add_argument(
+        "--mock-api",
+        action="store_true",
+        help="Use explicit local mock API responses instead of live Hub/Gateway calls.",
+    )
     args = parser.parse_args()
+
+    if args.mock_api:
+        print(
+            "[LOCAL MOCK MODE] Hub/Gateway API calls are being simulated locally. "
+            "No real human approval or external API response is being claimed."
+        )
 
     class _AtlasHandle:
         def __init__(self, data_dir: str) -> None:
@@ -195,6 +211,7 @@ if __name__ == "__main__":
         gateway_url=args.gateway_url,
         team_key=args.team_key,
         atlas=_AtlasHandle(args.data_dir),
+        mock_api=args.mock_api,
     )
     report = crew.run_cycle(cut=args.cut, protocol_version=args.protocol_version)
     print(
