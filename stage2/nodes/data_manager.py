@@ -1,5 +1,5 @@
 """
-stage2/nodes/data_manager.py  —  PERSON B
+stage2/nodes/data_manager.py  —  PERSON B (infra) + PERSON A (query wording)
 
 Formats data-quality findings into precise, record-cited queries and sends
 them via POST /queries — but never twice on the same record (checked
@@ -24,16 +24,63 @@ from stage2.trace_logger import TraceLogger
 
 def draft_query_text(finding: Finding) -> str:
     """
-    TODO (Person A): extend per finding.code with real, specific wording.
-    A good query: names the record, states what looks wrong, asks for ONE
-    thing. Never a vague "please check subject X".
+    Per-code query wording. A good query names the record, states what
+    looks wrong, and asks for ONE thing — never a vague "please check
+    subject X".
     """
+    refs = ", ".join(f"{e.domain}:{e.seq}" for e in finding.evidence)
+
     if finding.code == "AE_BEFORE_FIRST_DOSE":
         return (
             f"{finding.rationale} Please verify the AE start date against "
             f"source and correct or confirm."
         )
-    return f"{finding.rationale} Please verify against source and correct or confirm."
+
+    elif finding.code == "visit_window_deviations":
+        return (
+            f"Visit for subject {finding.usubjid} occurred outside "
+            f"the protocol window. {finding.rationale} "
+            f"Please confirm the actual visit date and protocol deviation. "
+            f"(refs: {refs})"
+        )
+
+    elif finding.code == "prohibited_medication_use":
+        return (
+            f"Subject {finding.usubjid} has a concomitant medication "
+            f"flagged as prohibited under the applicable protocol. "
+            f"{finding.rationale} Please confirm or correct the medication "
+            f"information. (refs: {refs})"
+        )
+
+    elif finding.code == "seriousness_miscoded":
+        return (
+            f"AE record for subject {finding.usubjid} may be miscoded "
+            f"as non-serious. {finding.rationale} "
+            f"Please review and confirm the correct seriousness classification. "
+            f"(refs: {refs})"
+        )
+
+    elif finding.code == "dosing_errors":
+        return (
+            f"Exposure record for subject {finding.usubjid} contains "
+            f"a possible dosing discrepancy. {finding.rationale} "
+            f"Please confirm the administered dose and treatment arm. "
+            f"(refs: {refs})"
+        )
+
+    elif finding.code == "hys_law_candidates":
+        return (
+            f"Subject {finding.usubjid} has laboratory findings that "
+            f"meet a potential Hy's Law signal. {finding.rationale} "
+            f"Please review the relevant laboratory results and confirm "
+            f"the clinical interpretation. (refs: {refs})"
+        )
+
+    else:
+        return (
+            f"Please review finding for subject {finding.usubjid}: "
+            f"{finding.rationale} (refs: {refs})"
+        )
 
 
 def process(
