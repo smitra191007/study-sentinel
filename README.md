@@ -45,6 +45,7 @@ The system processes clinical trial data through a modular pipeline, ensuring hi
 
 ## Project Structure
 
+```text
 study-sentinel/
 ├── hackathon-data/       # Raw clinical CSV tables and protocol/lab manual documents
 ├── stage1/
@@ -72,16 +73,6 @@ study-sentinel/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
-
-## Installation
-
-```bash
-git clone <repo-url>
-cd study-sentinel
-python -m venv venv
-source venv/bin/activate   # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
 
 ## Usage
 
