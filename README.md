@@ -45,21 +45,33 @@ The system processes clinical trial data through a modular pipeline, ensuring hi
 
 ## Project Structure
 
-```
 study-sentinel/
-├── hackathon-data/          # Raw clinical CSV tables and protocol/lab manual documents
+├── hackathon-data/       # Raw clinical CSV tables and protocol/lab manual documents
 ├── stage1/
-│   ├── loader.py            # Stage 1: Ingestion
-│   ├── cleaning.py          # Stage 2: Cleaning & normalization
-│   ├── graph.py              # Stage 3: Patient 360 graph construction
-│   ├── documents.py         # Stage 4: Document governance & trap scanning
-│   ├── checks.py             # Stage 5: Validation & safety checks
-│   └── atlas.py               # Stage 6: Query orchestration
-├── graph_stats.json          # Output: summary statistics from graph construction
+│   ├── loader.py         # Stage 1: Ingestion
+│   ├── cleaning.py       # Stage 2: Cleaning & normalization
+│   ├── graph.py          # Stage 3: Patient 360 graph construction
+│   ├── documents.py      # Stage 4: Document governance & trap scanning
+│   ├── checks.py         # Stage 5: Validation & safety checks
+│   └── atlas.py          # Stage 6: Query orchestration
+├── stage2/
+│   ├── nodes/
+│   │   ├── data_manager.py    # Query generator & duplicate suppressor
+│   │   ├── human_gate.py      # Escalation handler (Approved, Rejected, Clarify)
+│   │   └── medical_review.py  # Seriousness & plausibility checker (Protocol §6)
+│   ├── api_client.py     # Hub/Gateway API connector with timeout & fallback
+│   ├── canary.py         # Self-auditing canary test suite
+│   ├── crew.py           # 6-node review crew orchestration pipeline
+│   ├── memory.py         # Cross-cycle stateful tracking & deduplication
+│   ├── schema.py         # Data structures and review report schemas
+│   └── trace_logger.py   # Real-time JSONL audit trace logger
+├── tests/
+│   └── test_crew_smoke.py # End-to-end pipeline smoke tests
+├── graph_stats.json      # Output: summary statistics from graph construction
+├── stage2_memory.json    # Persistent state memory across execution cycles
 ├── requirements.txt
 ├── .gitignore
 └── README.md
-```
 
 ## Installation
 
